@@ -90,7 +90,7 @@ private TenderRecordAdapter tenderRecordAdapter;
 //        rl_platform.addItemDecoration(new DividerItemDecoration(
 //                getActivity(), DividerItemDecoration.HORIZONTAL_LIST));
 
-        tenderRecordAdapter = new TenderRecordAdapter(tenderRecords);
+        tenderRecordAdapter = new TenderRecordAdapter(tenderRecords,mListener);
         mRecyleview.setAdapter(tenderRecordAdapter);
         return view;
     }
