@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.sh.lynn.huang.wdaccount.ui.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/appbar_padding_top"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <FrameLayout
+        android:layout_below="@+id/appbar"
+        android:id="@+id/main_content_fg"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/tab_menu" />
+
+    <RadioGroup
+        android:layout_alignParentBottom="true"
+        android:id="@+id/tab_menu"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/bg_banner"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/rb_total"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@drawable/tab_selector_checked_bg"
+            android:button="@null"
+            android:checked="true"
+            android:drawableTop="@drawable/tab_selector_chart"
+            android:gravity="center_horizontal|bottom"
+            android:paddingTop="2dp"
+            android:text="汇总"
+            android:textSize="@dimen/s12"
+            android:textColor="@drawable/tab_selector_tv_color" />
+
+        <RadioButton
+            android:textSize="@dimen/s12"
+            android:id="@+id/rb_platfrom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@drawable/tab_selector_checked_bg"
+            android:button="@null"
+            android:drawableTop="@drawable/tab_selector_platform"
+            android:gravity="center_horizontal|bottom"
+            android:paddingTop="2dp"
+            android:text="平台"
+            android:textColor="@drawable/tab_selector_tv_color" />
+
+        <RadioButton
+            android:textSize="@dimen/s12"
+            android:checked="true"
+            android:id="@+id/rb_tender"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@drawable/tab_selector_checked_bg"
+            android:button="@null"
+            android:drawableTop="@drawable/tab_selector_tender"
+            android:gravity="center_horizontal|bottom"
+            android:paddingTop="2dp"
+            android:text="投标"
+            android:textColor="@drawable/tab_selector_tv_color" />
+        <RadioButton
+            android:textSize="@dimen/s12"
+            android:id="@+id/rb_money"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@drawable/tab_selector_checked_bg"
+            android:button="@null"
+            android:drawableTop="@drawable/tab_selector_money"
+            android:gravity="center_horizontal|bottom"
+            android:paddingTop="2dp"
+            android:text="我"
+            android:textColor="@drawable/tab_selector_tv_color" />
+        <RadioButton
+            android:textSize="@dimen/s12"
+            android:id="@+id/rb_Me"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@drawable/tab_selector_checked_bg"
+            android:button="@null"
+            android:drawableTop="@drawable/tab_selector_me"
+            android:gravity="center_horizontal|bottom"
+            android:paddingTop="2dp"
+            android:text="我"
+            android:textColor="@drawable/tab_selector_tv_color" />
+    </RadioGroup>
+
+</RelativeLayout>

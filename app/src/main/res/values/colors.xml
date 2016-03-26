@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303f9f</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="background_holo_light">#fff3f3f3</color>
+    <color name="layoutstrokecolor">#adb3b8</color>
+<color name="text_Color">#333333</color>
+
+    <!--按钮状态-->
+    <color name="button_pre">#2284dd</color>
+    <!--按钮状态-->
+    <color name="button_nor">#3ea3fe</color>
+    <!--灰色字体-->
+    <color name="textcolor_gray">#808080</color>
+    <color name="text_gold">#ea8010</color>
+</resources>
