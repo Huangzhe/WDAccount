@@ -10,13 +10,12 @@ import com.sh.lynn.huang.wdaccount.R;
 import com.sh.lynn.huang.wdaccount.been.TenderRecord;
 
 import com.sh.lynn.huang.wdaccount.ui.TenderFragment;
-import com.sh.lynn.huang.wdaccount.ui.dummy.DummyContent.DummyItem;
+
 
 import java.util.List;
 
 /**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
- * specified {@link OnListFragmentInteractionListener}.
+
  *
  */
 public class TenderRecordAdapter extends RecyclerView.Adapter<TenderRecordAdapter.ViewHolder> {

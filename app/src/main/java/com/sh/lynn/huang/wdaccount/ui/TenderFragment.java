@@ -19,8 +19,6 @@ import com.sh.lynn.huang.wdaccount.adapter.TenderRecordAdapter;
 import com.sh.lynn.huang.wdaccount.been.TenderRecord;
 import com.sh.lynn.huang.wdaccount.dao.PlatformDao;
 import com.sh.lynn.huang.wdaccount.dao.TenderRecordDao;
-import com.sh.lynn.huang.wdaccount.ui.dummy.DummyContent;
-import com.sh.lynn.huang.wdaccount.ui.dummy.DummyContent.DummyItem;
 
 import java.util.ArrayList;
 import java.util.List;
