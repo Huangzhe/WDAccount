@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
                     break;
                     case R.id.rb_tender:
+                        getFragmentManager().beginTransaction().replace(R.id.main_content_fg, TenderFragment.newInstance()).commit();
                         break;
                     case R.id.rb_money:
                         break;

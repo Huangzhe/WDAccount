@@ -1,10 +1,11 @@
 package com.sh.lynn.huang.wdaccount.ui;
 
+import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.Fragment;
+
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -50,7 +51,6 @@ private TenderRecordAdapter tenderRecordAdapter;
     @SuppressWarnings("unused")
     public static TenderFragment newInstance() {
         TenderFragment fragment = new TenderFragment();
-
         return fragment;
     }
 
@@ -71,7 +71,7 @@ private TenderRecordAdapter tenderRecordAdapter;
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),CreatPlatformActivity.class);
+                Intent intent = new Intent(getActivity(),CreatTenderRecordActivity.class);
                 startActivity(intent);
             }
         });

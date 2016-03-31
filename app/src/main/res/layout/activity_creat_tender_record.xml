@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+   >
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+<ScrollView
+    android:layout_marginTop="@dimen/d12"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/labelTextTheme"
+                android:text="平台名称：" />
+
+<Spinner
+    android:spinnerMode="dropdown"
+    android:id="@+id/sp_ptName"
+    android:layout_width="@dimen/d200"
+    android:layout_height="40dp"></Spinner>
+            <Button
+                android:layout_marginLeft="@dimen/d12"
+                android:id="@+id/btn_searchPf"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@android:drawable/ic_search_category_default" />
+
+            <TextView
+                android:id="@+id/tv_balance"
+                style="@style/labelTextTheme" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/labelTextTheme"
+                android:text="投资项目：" />
+
+            <EditText
+                android:id="@+id/et_projectName"
+                style="@style/labelTextTheme"
+                android:hint="项目名称" />
+
+            <Spinner
+                android:id="@+id/sp_style"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/labelTextTheme"
+                android:text="投资时间：" />
+
+            <TextView
+                android:id="@+id/tv_investTime"
+                style="@style/labelTextTheme"
+                android:layout_marginRight="10dp"
+                android:hint="2016-08-18" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/labelTextTheme"
+                android:text="投资期限：" />
+
+            <EditText
+                android:inputType="number"
+                android:id="@+id/et_timeLimit"
+                style="@style/labelTextTheme"
+                android:hint="3" />
+
+            <RadioGroup
+                android:id="@+id/rg_timeMethod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/rb_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="天" />
+
+                <RadioButton
+                    android:id="@+id/rb_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="月" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/labelTextTheme"
+                android:text="收益计算：" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/labelTextTheme"
+                android:text="投资金额：" />
+
+            <EditText
+                android:id="@+id/et_investMoney"
+                style="@style/labelTextTheme"
+                android:layout_marginRight="10dp"
+                android:hint="1000"
+                android:inputType="number" />
+
+            <TextView
+                style="@style/labelTextTheme"
+                android:text="元" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/labelTextTheme"
+                android:text="年利率：" />
+
+            <EditText
+                android:id="@+id/et_interestRate"
+                style="@style/labelTextTheme"
+                android:hint="20.5"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                style="@style/labelTextTheme"
+                android:layout_marginRight="10dp"
+                android:text="%" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/labelTextTheme"
+                android:text="投资奖励：" />
+
+            <EditText
+                android:id="@+id/et_investReward"
+                style="@style/labelTextTheme"
+                android:layout_marginRight="10dp"
+                android:hint="2"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                style="@style/labelTextTheme"
+                android:text="%" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/labelTextTheme"
+                android:text="管理费：" />
+
+            <EditText
+                android:id="@+id/et_platformCost"
+                style="@style/labelTextTheme"
+                android:layout_marginRight="10dp"
+                android:hint="2"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                style="@style/labelTextTheme"
+                android:text="%" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="例如：利息的2%等"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/labelTextTheme"
+                android:text="其他：" />
+
+            <EditText
+                android:id="@+id/et_otherMoney"
+                style="@style/labelTextTheme"
+                android:layout_marginRight="10dp"
+                android:hint="20"
+                android:inputType="numberSigned" />
+
+            <TextView
+                style="@style/labelTextTheme"
+                android:layout_marginRight="10dp"
+                android:text="元" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="bottom"
+                android:text="其他的收益支出，如：新人奖励，其他扣款等，扣款填负数"
+                android:textSize="10sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/labelTextTheme"
+                android:textColor="#cc0000"
+                android:text="总收益：" />
+
+            <TextView
+                android:id="@+id/tv_totalRevenue"
+                style="@style/labelTextTheme"
+                android:layout_marginRight="10dp"
+                android:hint="25"
+                />
+
+            <TextView
+                style="@style/labelTextTheme"
+                android:layout_marginRight="10dp"
+                android:text="元" />
+
+            <TextView
+                style="@style/labelTextTheme"
+                android:textColor="#cc0000"
+                android:text="折算年利率：" />
+
+            <TextView
+
+                android:id="@+id/tv_realRate"
+                style="@style/labelTextTheme"
+                android:layout_marginRight="10dp"
+
+                />
+
+            <TextView
+                style="@style/labelTextTheme"
+                android:text="%" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            >
+            <Button
+                android:id="@+id/btn_calculate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:text="计算"
+                />
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:text="保存"
+                />
+        </LinearLayout>
+
+
+        <!-- <TextView -->
+        <!-- style="@style/labelTextTheme" -->
+        <!-- android:text="还款方式:" /> -->
+
+
+        <!-- <EditText -->
+        <!-- android:id="@+id/et_platformName" -->
+        <!-- style="@style/labelTextTheme" -->
+        <!-- android:layout_marginRight="10dp" -->
+        <!-- android:inputType="numberDecimal" -->
+        <!-- android:hint="2" /> -->
+
+
+        <!-- </LinearLayout> -->
+
+    </LinearLayout>
+</ScrollView>
+</LinearLayout>
