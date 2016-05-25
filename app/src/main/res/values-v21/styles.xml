@@ -7,4 +7,19 @@
         <item name="android:statusBarColor">@color/button_pre</item>
 
     </style>
+
+    <style name="AppTheme" parent="AppTheme.NoActionBar">
+        <!-- Customize your theme here. -->
+        <!--<item name="colorPrimary">@color/material_blue_500</item>-->
+        <!--<item name="colorPrimaryDark">@color/material_blue_700</item>-->
+        <!--<item name="colorAccent">@color/material_green_A200</item>-->
+        <item name="colorPrimary">@color/accent_material_light</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/abc_primary_text_material_dark</item>
+        <item name="android:colorBackground">
+            @color/abc_background_cache_hint_selector_material_light
+        </item>
+        <item name="android:navigationBarColor">@color/accent_material_dark</item>
+    </style>
 </resources>

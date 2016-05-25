@@ -2,17 +2,21 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="AppTheme.NoActionBar">
-        <!-- Customize your theme here. -->
-        <!--<item name="colorPrimary">@color/material_blue_500</item>-->
-        <!--<item name="colorPrimaryDark">@color/material_blue_700</item>-->
-        <!--<item name="colorAccent">@color/material_green_A200</item>-->
-        <item name="colorPrimary">@color/button_pre</item>
+        <item name="colorPrimary">@color/accent_material_light</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/material_deep_teal_500</item>
+        <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColorPrimary">@color/abc_primary_text_material_dark</item>
         <item name="android:colorBackground">@color/abc_background_cache_hint_selector_material_light</item>
     </style>
-
+    <style name="ToolBarStyle">
+        <item name="android:id">@id/toolbar</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?actionBarSize</item>
+        <item name="theme">@style/AppTheme</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+    </style>
     <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -80,9 +84,44 @@
 
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize"> 16sp </item>:
+        <item name="android:textSize">16sp</item>:
         <item name="android:textColor">@android:color/black</item>
 
 
     </style>
+
+    <style name="countTextTitle">
+        <item name="android:textSize">@dimen/abc_text_size_large_material</item>
+        <item name="android:textColor">@android:color/holo_red_dark</item>
+    </style>"
+    <style name="Animations" />
+    <!--  这个是加入的代码 -->
+    <style name="mypopwindow_anim_style">
+        <item name="android:windowEnterAnimation">@anim/popshow_anim</item>
+        <!-- 指定显示的动画xml -->
+
+        <item name="android:windowExitAnimation">@anim/pophidden_anim</item>
+        <!-- 指定消失的动画xml -->
+    </style>
+
+    <style name="Animations.PopDownMenuRight">
+        <item name="@android:windowEnterAnimation">@anim/grow_from_topright_to_bottomleft</item>
+        <item name="@android:windowExitAnimation">@anim/shrink_from_bottomleft_to_topright</item>
+    </style>
+
+    <style name="Animations.PopDownMenuLeft">
+        <item name="@android:windowEnterAnimation">@anim/grow_from_topleft_to_bottomright</item>
+        <item name="@android:windowExitAnimation">@anim/shrink_from_bottomright_to_topleft</item>
+    </style>
+
+    <style name="Animations.GrowFromBottomRight">
+        <item name="@android:windowEnterAnimation">@anim/grow_from_bottomright_to_topleft</item>
+        <item name="@android:windowExitAnimation">@anim/shrink_from_topleft_to_bottomright</item>
+    </style>
+
+    <style name="Animations.GrowFromBottom">
+        <item name="@android:windowEnterAnimation">@anim/grow_from_bottom</item>
+        <item name="@android:windowExitAnimation">@anim/shrink_from_top</item>
+    </style>
+
 </resources>

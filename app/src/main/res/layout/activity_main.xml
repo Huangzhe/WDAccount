@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.sh.lynn.huang.wdaccount.ui.MainActivity">
+    tools:context=".module.main.MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appb"
@@ -25,10 +25,10 @@
 
 
 
-    <FrameLayout
+    <android.support.v4.view.ViewPager
 
         android:layout_below="@+id/appb"
-        android:id="@+id/main_content_fg"
+        android:id="@+id/viewpager"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_above="@+id/tab_menu" />
