@@ -12,9 +12,31 @@ public class MyDaoGenerator {
         Schema schema = new Schema(1, "com.sh.lynn.huang.wdaccount.been");
 
         addPlatform(schema);
+        addBankCardRecord(schema);
        // addCustomerOrder(schema);F:\develop\workspace_c\priateProject\WDAccount\app\src\main\java-gen
         schema.setDefaultJavaPackageDao("com.sh.lynn.huang.wdaccount.dao");
         new DaoGenerator().generateAll(schema, "F:\\develop\\workspace_c\\priateProject\\WDAccount\\app\\src\\main\\java-gen");
+    }
+
+    private static void addBankCardRecord(Schema schema){
+        Entity bankRecord  = schema.addEntity("BankCardRecord");
+        bankRecord.addIdProperty();
+        bankRecord.addStringProperty("userName").notNull();
+        bankRecord.addStringProperty("cardID").notNull();;
+        bankRecord.addStringProperty("money");
+        bankRecord.addStringProperty("descripe");
+        bankRecord.addDateProperty("time");
+        bankRecord.addIntProperty("type");
+
+        Entity bankCard =  schema.addEntity("BankCard");
+
+        bankCard.addStringProperty("cardID").notNull();
+        bankCard.addStringProperty("cardNum").notNull();;
+        bankCard.addStringProperty("balance");
+        bankCard.addStringProperty("bankName");
+        bankCard.addDateProperty("billTime");
+        bankCard.addIntProperty("cardType");
+
     }
 
     private static void addPlatform(Schema schema) {
