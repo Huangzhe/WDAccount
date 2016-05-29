@@ -8,8 +8,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.PopupWindow;
 
 import com.jude.beam.expansion.BeamBaseActivity;
 import com.sh.lynn.huang.wdaccount.R;
@@ -18,6 +22,7 @@ import com.sh.lynn.huang.wdaccount.module.debt.DebtFragment;
 import com.sh.lynn.huang.wdaccount.module.detail.DetailFragment;
 import com.sh.lynn.huang.wdaccount.module.invest.InvestFragment;
 import com.sh.lynn.huang.wdaccount.module.setting.SettingFragment;
+import com.sh.lynn.huang.wdaccount.utils.PopupHelper;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -100,15 +105,20 @@ public class Main2Activity extends BeamBaseActivity<MainPresenter> {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_add) {
           //  startActivity(new Intent(this, AboutUsActivity.class));
-
+            PopupWindow popupWindow =  PopupHelper.newBasicPopupWindow(this);
+            View view = View.inflate(this,R.layout.item_title_pop,null);
+            DisplayMetrics outMetrics = new DisplayMetrics();
+             getWindow().getWindowManager().getDefaultDisplay().getMetrics(outMetrics);
+            popupWindow.setContentView(view);
+            popupWindow.setAnimationStyle(R.style.Animations_PopDownMenuRight);
+         //   popupWindow.showAtLocation(tabLayout, Gravity.RIGHT,0,);
+            popupWindow.showAsDropDown(tabLayout,outMetrics.widthPixels,-tabLayout.getHeight());
             return true;
         }
 
