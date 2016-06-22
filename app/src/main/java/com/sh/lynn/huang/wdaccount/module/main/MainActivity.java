@@ -1,5 +1,6 @@
 package com.sh.lynn.huang.wdaccount.module.main;
 
+import android.app.Activity;
 import android.hardware.Camera;
 import android.hardware.camera2.CameraManager;
 import android.os.Bundle;
@@ -18,7 +19,7 @@ import com.sh.lynn.huang.wdaccount.ui.TenderFragment;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends BeamBaseActivity<MainPresenter> {
+public class MainActivity extends Activity {
 
     @Bind(R.id.tab_menu)
     RadioGroup tab_menu;
@@ -32,7 +33,7 @@ public class MainActivity extends BeamBaseActivity<MainPresenter> {
         ButterKnife.bind(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.app_name);
-        setSupportActionBar(toolbar);
+        //setSupportActionBar(toolbar);
 
         tab_menu.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

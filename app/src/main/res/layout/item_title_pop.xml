@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:background="@color/accent_material_light"
+    android:layout_height="wrap_content"
+    android:background="@color/material_deep_teal_500"
     >
 
     <TextView
@@ -11,12 +11,12 @@
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:drawableLeft="@mipmap/tab_sheep_press"
         android:gravity="center"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:textColor="@android:color/white"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/d40"
         android:text="刷卡记录"
         android:id="@+id/tv_add_cash"
+        android:drawablePadding="@dimen/d8"
         />
     <View
        style="@style/H_dividerView"
@@ -31,6 +31,7 @@
         android:layout_height="@dimen/d40"
         android:text="投资记录"
         android:id="@+id/tv_add_invest"
+        android:drawablePadding="@dimen/d8"
         />
     <View
         style="@style/H_dividerView"
@@ -39,12 +40,12 @@
         android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:drawableLeft="@mipmap/tab_platform_press"
+        android:drawablePadding="@dimen/d8"
         android:gravity="center"
         android:textColor="@android:color/white"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/d40"
         android:text="回款记录"
         android:id="@+id/tv_add_"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
         />
 </LinearLayout>

@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".module.main.MainActivity">
     <item
+        android:title="记一笔"
         android:id="@+id/action_add"
         android:orderInCategory="100"
-        android:title="添加"
-        android:icon="@android:drawable/ic_menu_add"
+        android:icon="@drawable/ic_filter_list"
         app:showAsAction="ifRoom" />
 </menu>

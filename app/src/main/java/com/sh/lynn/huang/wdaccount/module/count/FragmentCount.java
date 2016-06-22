@@ -19,7 +19,7 @@ import com.sh.lynn.huang.wdaccount.R;
  * Use the {@link FragmentCount#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentCount extends BeamFragment {
+public class FragmentCount extends Fragment {
 
 
     public FragmentCount() {

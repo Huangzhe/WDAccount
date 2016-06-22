@@ -1,12 +1,17 @@
 package com.sh.lynn.huang.wdaccount.module.main;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.view.menu.MenuPopupHelper;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
@@ -24,10 +29,12 @@ import com.sh.lynn.huang.wdaccount.module.invest.InvestFragment;
 import com.sh.lynn.huang.wdaccount.module.setting.SettingFragment;
 import com.sh.lynn.huang.wdaccount.utils.PopupHelper;
 
+import java.lang.reflect.Field;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class Main2Activity extends BeamBaseActivity<MainPresenter> {
+public class Main2Activity extends AppCompatActivity {
     @Bind(R.id.toolbar)
     Toolbar toolbar;
     @Bind(R.id.viewPager)
@@ -40,8 +47,11 @@ public class Main2Activity extends BeamBaseActivity<MainPresenter> {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
        // setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("钱管家  —  您的个人资产管家");
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("钱掌柜  —  您的个人资产管家");
+       // getSupportActionBar().setTitle("钱掌柜  —  您的个人资产管家");
         ButterKnife.bind(this);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         tabLayout.setTabTextColors(getResources().getColor(android.R.color.darker_gray), getResources().getColor(android.R.color.white));
@@ -98,29 +108,42 @@ public class Main2Activity extends BeamBaseActivity<MainPresenter> {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
+    @TargetApi(Build.VERSION_CODES.KITKAT)
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_add) {
-          //  startActivity(new Intent(this, AboutUsActivity.class));
-            PopupWindow popupWindow =  PopupHelper.newBasicPopupWindow(this);
-            View view = View.inflate(this,R.layout.item_title_pop,null);
-            DisplayMetrics outMetrics = new DisplayMetrics();
-             getWindow().getWindowManager().getDefaultDisplay().getMetrics(outMetrics);
-            popupWindow.setContentView(view);
-            popupWindow.setAnimationStyle(R.style.Animations_PopDownMenuRight);
-         //   popupWindow.showAtLocation(tabLayout, Gravity.RIGHT,0,);
-            popupWindow.showAsDropDown(tabLayout,outMetrics.widthPixels,-tabLayout.getHeight());
-            return true;
+
+            PopupMenu popupMenu =new PopupMenu(this, findViewById(R.id.action_add));
+            popupMenu.getMenuInflater().inflate(R.menu.menu_main2,popupMenu.getMenu());
+            try {
+                Field field = popupMenu.getClass().getDeclaredField("mPopup");
+                field.setAccessible(true);
+                MenuPopupHelper mHelper = (MenuPopupHelper) field.get(popupMenu);
+                mHelper.setForceShowIcon(true);
+            } catch (IllegalAccessException | NoSuchFieldException e) {
+                e.printStackTrace();
+            }
+            popupMenu.show();
         }
+        //noinspection SimplifiableIfStatement
+//        if (id == R.id.action_add) {
+//          //  startActivity(new Intent(this, AboutUsActivity.class));
+//            PopupWindow popupWindow =  PopupHelper.newBasicPopupWindow(this);
+//            View view = View.inflate(this,R.layout.item_title_pop,null);
+//            DisplayMetrics outMetrics = new DisplayMetrics();
+//             getWindow().getWindowManager().getDefaultDisplay().getMetrics(outMetrics);
+//            popupWindow.setContentView(view);
+//            popupWindow.setAnimationStyle(R.style.Animations_PopDownMenuRight);
+//         //   popupWindow.showAtLocation(tabLayout, Gravity.RIGHT,0,);
+//            popupWindow.showAsDropDown(tabLayout,outMetrics.widthPixels,-tabLayout.getHeight()-10);
+//            return true;
+//        }
 
         return super.onOptionsItemSelected(item);
     }
