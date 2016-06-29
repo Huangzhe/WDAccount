@@ -8,22 +8,18 @@ import com.sh.lynn.huang.wdaccount.BaseView;
  */
 public interface MainContract {
 
-    public interface View extends BaseView{
+    public interface View extends BaseView<Presenter>{
 
-        void showToal(String balance,String loan,String invest);
 
-        void showInvest();
-        void showLoan();
-        void showPopMenu ();
-        void setLoadingIndicator(boolean active);
+        void gotoAddBankRecord();
+        void gotoAddInvestRecord();
+        void gotoAddLoanRecord();
         //void
     }
 
     public interface Presenter extends BasePresenter{
 
-        void addRecord();
-        void addInvers();
-        void addLoan();
+        void goToAddPage(RecordType tag);
 
     }
 }

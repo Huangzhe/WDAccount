@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">钱管家</string>
+    <string name="app_name">Sample</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>

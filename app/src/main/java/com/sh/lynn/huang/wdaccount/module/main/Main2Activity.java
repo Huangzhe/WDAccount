@@ -1,7 +1,6 @@
 package com.sh.lynn.huang.wdaccount.module.main;
 
 import android.annotation.TargetApi;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -10,17 +9,14 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.view.menu.MenuPopupHelper;
-import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 
-import com.jude.beam.expansion.BeamBaseActivity;
 import com.sh.lynn.huang.wdaccount.R;
 import com.sh.lynn.huang.wdaccount.module.count.FragmentCount;
 import com.sh.lynn.huang.wdaccount.module.debt.DebtFragment;
@@ -29,26 +25,37 @@ import com.sh.lynn.huang.wdaccount.module.invest.InvestFragment;
 import com.sh.lynn.huang.wdaccount.module.setting.SettingFragment;
 import com.sh.lynn.huang.wdaccount.utils.PopupHelper;
 
-import java.lang.reflect.Field;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class Main2Activity extends AppCompatActivity {
+public class Main2Activity extends AppCompatActivity implements MainContract.View{
     @Bind(R.id.toolbar)
     Toolbar toolbar;
     @Bind(R.id.viewPager)
     ViewPager viewpager;
     @Bind(R.id.tab_layout)
     TabLayout tabLayout;
+
+  //  @Bind(R.id.tv_add_cash)
+    TextView tv_add_cash;
+
+  //  @Bind(R.id.tv_add_invest)
+    TextView tv_add_invest;
+
+  //  @Bind(R.id.tv_add_back)
+    TextView tv_add_back;
+
     private MainPagerAdapter mMainPagerAdapter;
+    private  MainContract.Presenter mainPresenter;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
        // setSupportActionBar(toolbar);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("钱掌柜  —  您的个人资产管家");
+       // toolbar.setTitle("钱掌柜  —  您的个人资产管家");
        // getSupportActionBar().setTitle("钱掌柜  —  您的个人资产管家");
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
@@ -60,6 +67,30 @@ public class Main2Activity extends AppCompatActivity {
 
 
     }
+
+
+
+    @Override
+    public void setPresenter(MainContract.Presenter presenter) {
+        mainPresenter =presenter;
+    }
+
+    @Override
+    public void gotoAddBankRecord() {
+
+
+    }
+
+    @Override
+    public void gotoAddInvestRecord() {
+
+    }
+
+    @Override
+    public void gotoAddLoanRecord() {
+
+    }
+
     public class MainPagerAdapter extends FragmentStatePagerAdapter {
 
         public MainPagerAdapter(FragmentManager fm) {
@@ -117,35 +148,53 @@ public class Main2Activity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         int id = item.getItemId();
-        if (id == R.id.action_add) {
 
-            PopupMenu popupMenu =new PopupMenu(this, findViewById(R.id.action_add));
-            popupMenu.getMenuInflater().inflate(R.menu.menu_main2,popupMenu.getMenu());
-            try {
-                Field field = popupMenu.getClass().getDeclaredField("mPopup");
-                field.setAccessible(true);
-                MenuPopupHelper mHelper = (MenuPopupHelper) field.get(popupMenu);
-                mHelper.setForceShowIcon(true);
-            } catch (IllegalAccessException | NoSuchFieldException e) {
-                e.printStackTrace();
-            }
-            popupMenu.show();
+        if (id == R.id.action_add) {
+          //  startActivity(new Intent(this, AboutUsActivity.class));
+            PopupWindow popupWindow =  PopupHelper.newBasicPopupWindow(this);
+            View view = View.inflate(this,R.layout.item_title_pop,null);
+            DisplayMetrics outMetrics = new DisplayMetrics();
+            getWindow().getWindowManager().getDefaultDisplay().getMetrics(outMetrics);
+            popupWindow.setContentView(view);
+            popupWindow.setAnimationStyle(R.style.Animations_PopDownMenuRight);
+            //   popupWindow.showAtLocation(tabLayout, Gravity.RIGHT,0,);
+            popupWindow.showAsDropDown(findViewById(R.id.action_add),outMetrics.widthPixels,-10);
+
+            tv_add_cash = (TextView) view.findViewById(R.id.tv_add_cash);
+            tv_add_invest = (TextView) view.findViewById(R.id.tv_add_invest);
+            tv_add_back = (TextView) view.findViewById(R.id.tv_add_back);
+
+            tv_add_cash.setOnClickListener(new MyPopItemClickListenre());
+            tv_add_invest.setOnClickListener(new MyPopItemClickListenre());
+
+            tv_add_back.setOnClickListener(new MyPopItemClickListenre());
+
+
+            return true;
         }
-        //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_add) {
-//          //  startActivity(new Intent(this, AboutUsActivity.class));
-//            PopupWindow popupWindow =  PopupHelper.newBasicPopupWindow(this);
-//            View view = View.inflate(this,R.layout.item_title_pop,null);
-//            DisplayMetrics outMetrics = new DisplayMetrics();
-//             getWindow().getWindowManager().getDefaultDisplay().getMetrics(outMetrics);
-//            popupWindow.setContentView(view);
-//            popupWindow.setAnimationStyle(R.style.Animations_PopDownMenuRight);
-//         //   popupWindow.showAtLocation(tabLayout, Gravity.RIGHT,0,);
-//            popupWindow.showAsDropDown(tabLayout,outMetrics.widthPixels,-tabLayout.getHeight()-10);
-//            return true;
-//        }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private class MyPopItemClickListenre implements View.OnClickListener{
+
+
+        @Override
+        public void onClick(View v) {
+
+            switch(v.getId()){
+                case R.id.tv_add_cash:
+                    mainPresenter.goToAddPage(RecordType.BankRecord);
+                    break;
+                case R.id.tv_add_invest:
+                    mainPresenter.goToAddPage(RecordType.InvestRecord);
+                    break;
+                case R.id.tv_add_back:
+                    mainPresenter.goToAddPage(RecordType.ReturnRecord);
+                    break;
+            }
+
+        }
     }
 
 }

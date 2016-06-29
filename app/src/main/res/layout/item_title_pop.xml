@@ -13,8 +13,9 @@
         android:gravity="center"
         android:textColor="@android:color/white"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/d40"
+        android:layout_height="@dimen/d48"
         android:text="刷卡记录"
+        android:textSize="@dimen/s16"
         android:id="@+id/tv_add_cash"
         android:drawablePadding="@dimen/d8"
         />
@@ -22,13 +23,15 @@
        style="@style/H_dividerView"
         />
     <TextView
+        android:textSize="@dimen/s16"
+
         android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:drawableLeft="@mipmap/tab_tender_press"
         android:gravity="center"
         android:textColor="@android:color/white"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/d40"
+        android:layout_height="@dimen/d48"
         android:text="投资记录"
         android:id="@+id/tv_add_invest"
         android:drawablePadding="@dimen/d8"
@@ -44,8 +47,10 @@
         android:gravity="center"
         android:textColor="@android:color/white"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/d40"
+        android:layout_height="@dimen/d48"
         android:text="回款记录"
-        android:id="@+id/tv_add_"
+        android:id="@+id/tv_add_back"
+        android:textSize="@dimen/s16"
+
         />
 </LinearLayout>
