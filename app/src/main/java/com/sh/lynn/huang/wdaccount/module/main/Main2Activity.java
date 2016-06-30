@@ -87,7 +87,7 @@ public class Main2Activity extends AppCompatActivity implements MainContract.Vie
     }
 
     @Override
-    public void gotoAddLoanRecord() {
+    public void gotoAddReturnRecord() {
 
     }
 

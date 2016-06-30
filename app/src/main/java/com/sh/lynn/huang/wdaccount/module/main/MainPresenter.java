@@ -16,11 +16,11 @@ public class MainPresenter  implements MainContract.Presenter{
             case BankRecord:
                 mainView.gotoAddBankRecord();
                 break;
-            case LoanRecord:
-                mainView.gotoAddLoanRecord();
-                break;
             case InvestRecord:
                 mainView.gotoAddInvestRecord();
+                break;
+            case ReturnRecord:
+                mainView.gotoAddReturnRecord();
                 break;
         }
     }

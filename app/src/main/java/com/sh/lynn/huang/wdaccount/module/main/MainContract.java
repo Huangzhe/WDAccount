@@ -13,7 +13,7 @@ public interface MainContract {
 
         void gotoAddBankRecord();
         void gotoAddInvestRecord();
-        void gotoAddLoanRecord();
+        void gotoAddReturnRecord();
         //void
     }
 
