@@ -33,7 +33,7 @@
         <!-- android:name=".module.main.Main2Activity" -->
         <!-- android:label="@string/title_activity_main2" -->
         <!-- android:theme="@style/AppTheme"></activity> -->
-        <activity android:name=".module.detail.ActivityAddBankCardDetail"></activity>
+        <activity android:name=".module.detail.AddBankCardDetailActivity"></activity>
     </application>
 
 </manifest>

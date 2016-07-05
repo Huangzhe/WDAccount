@@ -1,6 +1,7 @@
 package com.sh.lynn.huang.wdaccount.module.main;
 
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -20,6 +21,7 @@ import android.widget.TextView;
 import com.sh.lynn.huang.wdaccount.R;
 import com.sh.lynn.huang.wdaccount.module.count.FragmentCount;
 import com.sh.lynn.huang.wdaccount.module.debt.DebtFragment;
+import com.sh.lynn.huang.wdaccount.module.detail.AddBankCardDetailActivity;
 import com.sh.lynn.huang.wdaccount.module.detail.DetailFragment;
 import com.sh.lynn.huang.wdaccount.module.invest.InvestFragment;
 import com.sh.lynn.huang.wdaccount.module.setting.SettingFragment;
@@ -64,7 +66,7 @@ public class Main2Activity extends AppCompatActivity implements MainContract.Vie
         tabLayout.setTabTextColors(getResources().getColor(android.R.color.darker_gray), getResources().getColor(android.R.color.white));
         viewpager.setAdapter(mMainPagerAdapter = new MainPagerAdapter(getSupportFragmentManager()));
         tabLayout.setupWithViewPager(viewpager);
-
+        mainPresenter = new MainPresenter(this);
 
     }
 
@@ -78,6 +80,8 @@ public class Main2Activity extends AppCompatActivity implements MainContract.Vie
     @Override
     public void gotoAddBankRecord() {
 
+        Intent intent = new Intent(this, AddBankCardDetailActivity.class);
+        startActivity(intent);
 
     }
 
