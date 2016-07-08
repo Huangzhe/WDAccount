@@ -20,6 +20,7 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             style="@style/ToolBarStyle"
+            android:fitsSystemWindows="true"
             app:layout_scrollFlags="scroll|enterAlways"
             >
         </android.support.v7.widget.Toolbar>

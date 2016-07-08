@@ -56,7 +56,7 @@ public class Main2Activity extends AppCompatActivity implements MainContract.Vie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
        // setSupportActionBar(toolbar);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+       // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
        // toolbar.setTitle("钱掌柜  —  您的个人资产管家");
        // getSupportActionBar().setTitle("钱掌柜  —  您的个人资产管家");
         ButterKnife.bind(this);
@@ -64,6 +64,7 @@ public class Main2Activity extends AppCompatActivity implements MainContract.Vie
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         tabLayout.setTabTextColors(getResources().getColor(android.R.color.darker_gray), getResources().getColor(android.R.color.white));
+
         viewpager.setAdapter(mMainPagerAdapter = new MainPagerAdapter(getSupportFragmentManager()));
         tabLayout.setupWithViewPager(viewpager);
         mainPresenter = new MainPresenter(this);

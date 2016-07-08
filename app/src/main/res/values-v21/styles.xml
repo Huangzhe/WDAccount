@@ -4,7 +4,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">@color/button_pre</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
 
     </style>
 
@@ -13,7 +13,7 @@
         <!--<item name="colorPrimary">@color/material_blue_500</item>-->
         <!--<item name="colorPrimaryDark">@color/material_blue_700</item>-->
         <!--<item name="colorAccent">@color/material_green_A200</item>-->
-        <item name="colorPrimary">@color/accent_material_light</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColorPrimary">@color/primary_text_default_material_dark</item>

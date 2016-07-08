@@ -3,6 +3,7 @@ package com.sh.lynn.huang.wdaccount.module.detail;
 import com.sh.lynn.huang.wdaccount.BasePresenter;
 import com.sh.lynn.huang.wdaccount.BaseView;
 import com.sh.lynn.huang.wdaccount.been.BankCard;
+import com.sh.lynn.huang.wdaccount.been.BankCardRecord;
 
 import java.util.List;
 
@@ -14,15 +15,15 @@ public class AddBankCardDetailContract {
     public interface View extends BaseView<Presenter>{
 
         void setBankCard(String bankCard);
-        void showBankCardList();
+        void showBankCardList(List<BankCard> bankCardRecords);
 
     }
 
     public interface Presenter extends BasePresenter {
 
-        void saveBankCardRecord();
+        void saveBankCardRecord(BankCardRecord record);
 
-        List<BankCard> getBankCardList();
+        void getBankCardList();
 
 
 

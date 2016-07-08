@@ -11,10 +11,8 @@ import com.sh.lynn.huang.wdaccount.R;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class Main2ActivityFragment extends Fragment {
+public class Main2Fragment extends Fragment {
 
-    public Main2ActivityFragment() {
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -12,13 +12,19 @@ import com.sh.lynn.huang.wdaccount.dao.DaoSession;
 public class WDApp extends Application {
 
    public DaoSession daoSession;
+    public static WDApp instance;
     @Override
     public void onCreate() {
         super.onCreate();
-
+        instance=this;
         setupDatabase();
     }
 
+
+    public static WDApp getInstance(){
+
+        return  instance;
+    }
     private void setupDatabase() {
         // 通过 DaoMaster 的内部类 DevOpenHelper，你可以得到一个便利的 SQLiteOpenHelper 对象。
         // 可能你已经注意到了，你并不需要去编写「CREATE TABLE」这样的 SQL 语句，因为 greenDAO 已经帮你做了。
