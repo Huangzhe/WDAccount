@@ -2,11 +2,27 @@ package com.sh.lynn.huang.wdaccount.module.invest;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.ViewStub;
+import android.widget.EditText;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.sh.lynn.huang.wdaccount.R;
 
+import butterknife.Bind;
+
 public class AddInvestActivity extends AppCompatActivity {
 
+    @Bind(R.id.viewStub)
+    ViewStub viewStub;
+    @Bind(R.id.rg_investType)
+    RadioGroup rg_investType;
+    @Bind(R.id.tv_checksource)
+    TextView tv_checksource;
+    @Bind(R.id.et_investmoney)
+    EditText et_investmoney;
+    @Bind(R.id.et_investTarget)
+    EditText et_investTarget;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

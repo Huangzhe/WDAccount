@@ -130,4 +130,24 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
     </style>
+    <style name="H_dividerView2">
+        <item name="android:background">@color/text_hint</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginBottom">@dimen/d5</item>
+        <item name="android:layout_marginTop">@dimen/d5</item>
+    </style>
+    <!--android:layout_width="@dimen/d80"-->
+    <!--android:layout_height="@dimen/d40"-->
+    <!--android:gravity="center_vertical"-->
+    <!--android:textColor="@android:color/black"-->
+    <!--android:textSize="@dimen/s16"-->
+    <style name="TextView_label2">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:layout_width">@dimen/d80</item>
+        <item name="android:layout_height">@dimen/d40</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/s16</item>
+    </style>
+
 </resources>
