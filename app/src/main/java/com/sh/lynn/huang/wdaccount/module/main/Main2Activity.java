@@ -23,6 +23,7 @@ import com.sh.lynn.huang.wdaccount.module.count.FragmentCount;
 import com.sh.lynn.huang.wdaccount.module.debt.DebtFragment;
 import com.sh.lynn.huang.wdaccount.module.detail.AddBankCardDetailActivity;
 import com.sh.lynn.huang.wdaccount.module.detail.DetailFragment;
+import com.sh.lynn.huang.wdaccount.module.invest.AddInvestActivity;
 import com.sh.lynn.huang.wdaccount.module.invest.InvestFragment;
 import com.sh.lynn.huang.wdaccount.module.setting.SettingFragment;
 import com.sh.lynn.huang.wdaccount.utils.PopupHelper;
@@ -49,7 +50,7 @@ public class Main2Activity extends AppCompatActivity implements MainContract.Vie
 
     private MainPagerAdapter mMainPagerAdapter;
     private  MainContract.Presenter mainPresenter;
-
+    PopupWindow popupWindow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +89,8 @@ public class Main2Activity extends AppCompatActivity implements MainContract.Vie
 
     @Override
     public void gotoAddInvestRecord() {
+        Intent intent = new Intent(this, AddInvestActivity.class);
+        startActivity(intent);
 
     }
 
@@ -156,7 +159,7 @@ public class Main2Activity extends AppCompatActivity implements MainContract.Vie
 
         if (id == R.id.action_add) {
           //  startActivity(new Intent(this, AboutUsActivity.class));
-            PopupWindow popupWindow =  PopupHelper.newBasicPopupWindow(this);
+            popupWindow =  PopupHelper.newBasicPopupWindow(this);
             View view = View.inflate(this,R.layout.item_title_pop,null);
             DisplayMetrics outMetrics = new DisplayMetrics();
             getWindow().getWindowManager().getDefaultDisplay().getMetrics(outMetrics);
@@ -186,7 +189,7 @@ public class Main2Activity extends AppCompatActivity implements MainContract.Vie
 
         @Override
         public void onClick(View v) {
-
+            popupWindow.dismiss();
             switch(v.getId()){
                 case R.id.tv_add_cash:
                     mainPresenter.goToAddPage(RecordType.BankRecord);

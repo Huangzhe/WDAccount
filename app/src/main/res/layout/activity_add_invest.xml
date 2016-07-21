@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.sh.lynn.huang.wdaccount.module.invest.AddInvestActivity">
+    android:orientation="vertical"
 
+    tools:context="com.sh.lynn.huang.wdaccount.module.invest.AddInvestActivity">
+    <include
+        android:id="@+id/top"
+        layout="@layout/toolbar"/>
+    <ScrollView
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -117,6 +124,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_target"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ll_money"
@@ -141,6 +149,31 @@
                     android:textColorHint="@color/text_hint"
                     android:textSize="@dimen/s16" />
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_target"
+                android:layout_marginTop="@dimen/d10"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextView_label2"
+                    android:text="投资时间" />
+
+                <TextView
+                    android:id="@+id/tv_investTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/d40"
+                    android:layout_marginLeft="@dimen/d10"
+                    android:drawablePadding="@dimen/d10"
+                    android:gravity="center_vertical"
+
+                    android:hint="请输入投资时间"
+                    android:minWidth="@dimen/d100"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@color/text_hint"
+                    android:textSize="@dimen/s16" />
+            </LinearLayout>
         </RelativeLayout>
 
         <View
@@ -148,18 +181,40 @@
             style="@style/H_dividerView2"
             android:layout_below="@+id/rl_base_invest" />
 
-        <ViewStub
-            android:layout_below="@+id/divider2"
-            android:id="@+id/viewStub"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <!--<ViewStub-->
+            <!--android:layout_below="@+id/divider2"-->
+            <!--android:id="@+id/viewStub"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+<LinearLayout
+    android:layout_below="@+id/divider2"
+    android:id="@+id/ll_other"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
 
+    >
+
+<include
+    android:id="@+id/layout_p2p"
+    layout="@layout/add_invest_p2p"
+    android:visibility="gone"
+    />
+
+    <include
+        android:id="@+id/layout_funds"
+        layout="@layout/add_invest_funds"
+        />
+
+</LinearLayout>
+
+        
         <Button
 
             android:id="@+id/btn_save"
             android:layout_width="fill_parent"
             android:layout_height="@dimen/d42"
-            android:layout_below="@+id/viewStub"
+            android:layout_below="@+id/ll_other"
             android:layout_marginLeft="@dimen/d19"
             android:layout_marginRight="@dimen/d19"
             android:layout_marginTop="@dimen/d20"
@@ -169,3 +224,4 @@
             android:textSize="@dimen/s16" />
     </RelativeLayout>
 </ScrollView>
+    </LinearLayout>

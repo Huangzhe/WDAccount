@@ -10,6 +10,6 @@ public class CreatTenderRecordActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_creat_tender_record);
+        setContentView(R.layout.creat_invest_record);
     }
 }

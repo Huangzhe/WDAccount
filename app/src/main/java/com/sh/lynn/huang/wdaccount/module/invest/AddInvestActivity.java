@@ -2,6 +2,8 @@ package com.sh.lynn.huang.wdaccount.module.invest;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.view.ViewStub;
 import android.widget.EditText;
 import android.widget.RadioGroup;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 import com.sh.lynn.huang.wdaccount.R;
 
 import butterknife.Bind;
+import butterknife.ButterKnife;
 
 public class AddInvestActivity extends AppCompatActivity {
 
@@ -27,5 +30,18 @@ public class AddInvestActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_invest);
+        ButterKnife.bind(this);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+
     }
 }

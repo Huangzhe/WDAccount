@@ -48,7 +48,7 @@ public class AddBankCardDetailActivity extends AppCompatActivity implements AddB
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_activity_add_bank_card_detail);
+        setContentView(R.layout.activity_add_bank_card_detail);
         ButterKnife.bind(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
