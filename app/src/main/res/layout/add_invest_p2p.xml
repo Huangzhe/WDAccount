@@ -10,78 +10,88 @@
             android:orientation="horizontal" >
 
             <TextView
-                style="@style/labelTextTheme"
-                android:text="平台名称：" />
-
-            <Spinner
-                android:spinnerMode="dropdown"
-                android:id="@+id/sp_ptName"
-                android:layout_width="@dimen/d200"
-                android:layout_height="40dp"></Spinner>
-            <Button
-                android:layout_marginLeft="@dimen/d12"
-                android:id="@+id/btn_searchPf"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:background="@android:drawable/ic_search_category_default" />
+                style="@style/TextView_label2"
+                android:text="平台名称" />
 
             <TextView
-                android:id="@+id/tv_balance"
-                style="@style/labelTextTheme" />
+                android:id="@+id/tv_select_pf"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/d40"
+                android:layout_marginLeft="@dimen/d10"
+                android:drawablePadding="@dimen/d10"
+                android:drawableRight="@android:drawable/arrow_down_float"
+                android:gravity="center_vertical"
+                android:hint="请选择P2P平台"
+                android:minWidth="@dimen/d100"
+                android:maxWidth="@dimen/d150"
+                android:textColorHint="@color/text_hint"
+                android:textSize="@dimen/s16" />
+
+            <ImageButton
+                android:id="@+id/ib_addPlatform"
+                android:layout_marginLeft="@dimen/d10"
+                android:src="@android:drawable/ic_input_add"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/d40" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+
             android:orientation="horizontal" >
 
             <TextView
-                style="@style/labelTextTheme"
-                android:text="投资项目：" />
+                style="@style/TextView_label2"
+                android:text="投资项目" />
 
             <EditText
                 android:id="@+id/et_projectName"
                 style="@style/labelTextTheme"
                 android:hint="项目名称" />
-
-            <Spinner
-                android:id="@+id/sp_style"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-
-                android:spinnerMode="dropdown" />
+            <!--<TextView-->
+                <!--android:id="@+id/tv_select_tender"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="@dimen/d40"-->
+                <!--android:layout_marginLeft="@dimen/d10"-->
+                <!--android:drawablePadding="@dimen/d10"-->
+                <!--android:drawableRight="@android:drawable/arrow_down_float"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:hint="请选择P2P平台"-->
+                <!--android:minWidth="@dimen/d100"-->
+                <!--android:textColorHint="@color/text_hint"-->
+                <!--android:textSize="@dimen/s16" />-->
         </LinearLayout>
+
+        <!--<LinearLayout-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:orientation="horizontal" >-->
+
+            <!--<TextView-->
+                <!--style="@style/labelTextTheme"-->
+                <!--android:text="投资时间：" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tv_investTime"-->
+                <!--style="@style/labelTextTheme"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:hint="2016-08-18" />-->
+        <!--</LinearLayout>-->
 
         <LinearLayout
             android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+
             android:orientation="horizontal" >
 
             <TextView
-                style="@style/labelTextTheme"
-                android:text="投资时间：" />
-
-            <TextView
-                android:id="@+id/tv_investTime"
-                style="@style/labelTextTheme"
-                android:layout_marginRight="10dp"
-                android:hint="2016-08-18" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_marginTop="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:orientation="horizontal" >
-
-            <TextView
-                style="@style/labelTextTheme"
-                android:text="投资期限：" />
+                style="@style/TextView_label2"
+                android:text="投资期限" />
 
             <EditText
                 android:inputType="number"
@@ -116,32 +126,38 @@
             android:orientation="horizontal" >
 
             <TextView
-                style="@style/labelTextTheme"
+                style="@style/TextView_label2"
                 android:text="收益计算：" />
+
+            <Button
+                android:layout_marginLeft="@dimen/d10"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/d40"
+                android:text="试算"/>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_marginTop="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:orientation="horizontal" >
+        <!--<LinearLayout-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="20dp"-->
+            <!--android:orientation="horizontal" >-->
 
-            <TextView
-                style="@style/labelTextTheme"
-                android:text="投资金额：" />
+            <!--<TextView-->
+                <!--style="@style/labelTextTheme"-->
+                <!--android:text="投资金额：" />-->
 
-            <EditText
-                android:id="@+id/et_investMoney"
-                style="@style/labelTextTheme"
-                android:layout_marginRight="10dp"
-                android:hint="1000"
-                android:inputType="number" />
+            <!--<EditText-->
+                <!--android:id="@+id/et_investMoney"-->
+                <!--style="@style/labelTextTheme"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:hint="1000"-->
+                <!--android:inputType="number" />-->
 
-            <TextView
-                style="@style/labelTextTheme"
-                android:text="元" />
-        </LinearLayout>
+            <!--<TextView-->
+                <!--style="@style/labelTextTheme"-->
+                <!--android:text="元" />-->
+        <!--</LinearLayout>-->
 
         <LinearLayout
             android:layout_marginTop="5dp"
@@ -288,31 +304,31 @@
                 style="@style/labelTextTheme"
                 android:text="%" />
         </LinearLayout>
-        <LinearLayout
-            android:layout_marginTop="5dp"
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            >
-            <Button
-                android:id="@+id/btn_calculate"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:text="计算"
-                />
-            <Button
-                android:id="@+id/btn_save"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:text="保存"
-                />
-        </LinearLayout>
+        <!--<LinearLayout-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="20dp"-->
+            <!--android:layout_marginRight="20dp"-->
+            <!--&gt;-->
+            <!--<Button-->
+                <!--android:id="@+id/btn_calculate"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:text="计算"-->
+                <!--/>-->
+            <!--<Button-->
+                <!--android:id="@+id/btn_save"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:text="保存"-->
+                <!--/>-->
+        <!--</LinearLayout>-->
 
 
 
