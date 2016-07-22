@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.sh.lynn.huang.wdaccount.R;
-import com.sh.lynn.huang.wdaccount.been.TenderRecord;
 
 import com.sh.lynn.huang.wdaccount.ui.TenderFragment;
 

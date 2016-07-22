@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 
 import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -15,10 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.sh.lynn.huang.wdaccount.R;
-import com.sh.lynn.huang.wdaccount.adapter.PlatformAdapter;
 import com.sh.lynn.huang.wdaccount.adapter.TenderRecordAdapter;
-import com.sh.lynn.huang.wdaccount.been.TenderRecord;
-import com.sh.lynn.huang.wdaccount.dao.PlatformDao;
 import com.sh.lynn.huang.wdaccount.dao.TenderRecordDao;
 
 import java.util.ArrayList;

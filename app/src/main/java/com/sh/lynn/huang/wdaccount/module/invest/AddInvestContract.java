@@ -4,6 +4,7 @@ import com.sh.lynn.huang.wdaccount.BasePresenter;
 import com.sh.lynn.huang.wdaccount.BaseView;
 import com.sh.lynn.huang.wdaccount.been.BankCard;
 import com.sh.lynn.huang.wdaccount.been.BankCardRecord;
+import com.sh.lynn.huang.wdaccount.been.Platform;
 
 import java.util.List;
 
@@ -16,14 +17,19 @@ public class AddInvestContract {
 
         void setBankCard(String bankCard);
         void showBankCardList(List<BankCard> bankCardRecords);
-
+        void showDateDialog();
+        void showExtendView(int type);
+        void showPlatformList(List<Platform> pfLists);
+        void setPlatform(Platform platform);
     }
 
     public interface Presenter extends BasePresenter {
 
-        void saveBankCardRecord(BankCardRecord record);
+        void saveInvestRecord(BankCardRecord record);
 
         void getBankCardList();
+
+        void getPlatformList();
 
 
 

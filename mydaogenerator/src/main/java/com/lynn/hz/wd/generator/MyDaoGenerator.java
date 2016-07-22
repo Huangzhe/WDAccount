@@ -15,7 +15,7 @@ public class MyDaoGenerator {
         addBankCardRecord(schema);
        // addCustomerOrder(schema);F:\develop\workspace_c\priateProject\WDAccount\app\src\main\java-gen
         schema.setDefaultJavaPackageDao("com.sh.lynn.huang.wdaccount.dao");
-        new DaoGenerator().generateAll(schema, "F:\\develop\\workspace_c\\priateProject\\WDAccount\\app\\src\\main\\java-gen");
+        new DaoGenerator().generateAll(schema, "E:\\develop\\workspace_e\\WDAccount\\app\\src\\main\\java-gen");
     }
 
     private static void addBankCardRecord(Schema schema){
@@ -63,7 +63,7 @@ public class MyDaoGenerator {
         Property platformId =    moneyRecord.addLongProperty("platformId").notNull().getProperty();
         moneyRecord.addToOne(platform,platformId);
 //投资记录
-        Entity tenderRecord = schema.addEntity("TenderRecord");
+        Entity tenderRecord = schema.addEntity("InvestRecord");
         tenderRecord.addIdProperty();
         tenderRecord.addDoubleProperty("money").notNull();
         tenderRecord.addDateProperty("tenderTime");
@@ -74,8 +74,12 @@ public class MyDaoGenerator {
         tenderRecord.addStringProperty("tenderState");
 
         tenderRecord.addDoubleProperty("rate");
-        tenderRecord.addDoubleProperty("reword");
-
+       // tenderRecord.addDoubleProperty("reword");
+        tenderRecord.addStringProperty("desc");
+        tenderRecord.addStringProperty("fundsName");
+        tenderRecord.addStringProperty("fundsCode");
+        tenderRecord.addStringProperty("funds_pf");
+        tenderRecord.addStringProperty("p2p_pj_name");
 
         Property platformId2 =    tenderRecord.addLongProperty("platformId").notNull().getProperty();
         tenderRecord.addToOne(platform,platformId2);
