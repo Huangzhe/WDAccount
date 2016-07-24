@@ -21,6 +21,7 @@ public class AddInvestContract {
         void showExtendView(int type);
         void showPlatformList(List<Platform> pfLists);
         void setPlatform(Platform platform);
+        void gotoP2PPfAct();
     }
 
     public interface Presenter extends BasePresenter {
@@ -31,7 +32,11 @@ public class AddInvestContract {
 
         void getPlatformList();
 
+        void setInvetsType(int type);
 
+        void gotoAddP2PPlatform();
+
+        void calIncome();
 
     }
 }
