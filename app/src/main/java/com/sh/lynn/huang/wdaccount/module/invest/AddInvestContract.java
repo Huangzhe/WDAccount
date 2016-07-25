@@ -3,7 +3,7 @@ package com.sh.lynn.huang.wdaccount.module.invest;
 import com.sh.lynn.huang.wdaccount.BasePresenter;
 import com.sh.lynn.huang.wdaccount.BaseView;
 import com.sh.lynn.huang.wdaccount.been.BankCard;
-import com.sh.lynn.huang.wdaccount.been.BankCardRecord;
+import com.sh.lynn.huang.wdaccount.been.InvestRecord;
 import com.sh.lynn.huang.wdaccount.been.Platform;
 
 import java.util.List;
@@ -22,11 +22,12 @@ public class AddInvestContract {
         void showPlatformList(List<Platform> pfLists);
         void setPlatform(Platform platform);
         void gotoP2PPfAct();
+        void setIncome(double income);
     }
 
     public interface Presenter extends BasePresenter {
 
-        void saveInvestRecord(BankCardRecord record);
+        void saveInvestRecord(InvestRecord record);
 
         void getBankCardList();
 
@@ -36,7 +37,7 @@ public class AddInvestContract {
 
         void gotoAddP2PPlatform();
 
-        void calIncome();
+        double calIncome();
 
     }
 }

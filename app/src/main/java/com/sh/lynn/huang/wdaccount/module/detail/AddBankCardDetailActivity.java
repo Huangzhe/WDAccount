@@ -60,7 +60,7 @@ public class AddBankCardDetailActivity extends AppCompatActivity implements AddB
                 finish();
             }
         });
-        mPresent = new DetailPresenter(this);
+        mPresent = new AddBankCardRecordPresenter(this);
         rg_type.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {

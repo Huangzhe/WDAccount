@@ -14,14 +14,14 @@ import rx.schedulers.Schedulers;
 /**
  * Created by Huangz on 16/5/22.
  */
-public class DetailPresenter implements AddBankCardDetailContract.Presenter {
+public class AddBankCardRecordPresenter implements AddBankCardDetailContract.Presenter {
     AddBankCardDetailContract.View addBankView;
 
 //    BankCardDao bankCardDao;
 //    BankCardRecordDao bankCardRecordDao;
     BankCardRecordRepository bankCardRecordRepository;
     BankCardRespository bankCardRespository;
-    public DetailPresenter(AddBankCardDetailContract.View view){
+    public AddBankCardRecordPresenter(AddBankCardDetailContract.View view){
         this.addBankView = addBankView;
 //        bankCardDao = WDApp.getInstance().daoSession.getBankCardDao();
 //        bankCardRecordDao=WDApp.getInstance().daoSession.getBankCardRecordDao();

@@ -15,7 +15,7 @@ public interface BankCardRecordDataSource {
 
     Observable<List<BankCardRecord>> getRecords();
 
-    Observable<BankCardRecord> getRecord(@NonNull String taskId);
+    Observable<BankCardRecord> getRecord(@NonNull Long taskId);
 
     void saveRecord(@NonNull BankCardRecord task);
 

@@ -38,10 +38,17 @@ public class BankCardRecordRepository implements  BankCardRecordDataSource{
     }
 
     @Override
-    public Observable<BankCardRecord> getRecord(@NonNull String taskId) {
+    public Observable<BankCardRecord> getRecord(@NonNull final Long taskId) {
+        Observable<BankCardRecord> observable = Observable.create(new Observable.OnSubscribe<BankCardRecord>() {
+            @Override
+            public void call(Subscriber<? super BankCardRecord> subscriber) {
+                BankCardRecord  record = dao.load(taskId);
+                subscriber.onNext(record);
+                subscriber.onCompleted();
+            }
+        });
 
-
-        return null;
+        return observable;
     }
 
     @Override
