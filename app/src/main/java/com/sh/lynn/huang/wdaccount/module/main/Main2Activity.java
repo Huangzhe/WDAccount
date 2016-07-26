@@ -4,11 +4,15 @@ import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
@@ -25,13 +29,12 @@ import com.sh.lynn.huang.wdaccount.module.detail.AddBankCardDetailActivity;
 import com.sh.lynn.huang.wdaccount.module.detail.DetailFragment;
 import com.sh.lynn.huang.wdaccount.module.invest.AddInvestActivity;
 import com.sh.lynn.huang.wdaccount.module.invest.InvestFragment;
-import com.sh.lynn.huang.wdaccount.module.setting.SettingFragment;
 import com.sh.lynn.huang.wdaccount.utils.PopupHelper;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class Main2Activity extends AppCompatActivity implements MainContract.View{
+public class Main2Activity extends AppCompatActivity implements MainContract.View , NavigationView.OnNavigationItemSelectedListener {
     @Bind(R.id.toolbar)
     Toolbar toolbar;
     @Bind(R.id.viewPager)
@@ -55,13 +58,13 @@ public class Main2Activity extends AppCompatActivity implements MainContract.Vie
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main);
        // setSupportActionBar(toolbar);
        // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
        // toolbar.setTitle("钱掌柜  —  您的个人资产管家");
        // getSupportActionBar().setTitle("钱掌柜  —  您的个人资产管家");
         ButterKnife.bind(this);
-        setSupportActionBar(toolbar);
+       setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         tabLayout.setTabTextColors(getResources().getColor(android.R.color.darker_gray), getResources().getColor(android.R.color.white));
@@ -69,6 +72,15 @@ public class Main2Activity extends AppCompatActivity implements MainContract.Vie
         viewpager.setAdapter(mMainPagerAdapter = new MainPagerAdapter(getSupportFragmentManager()));
         tabLayout.setupWithViewPager(viewpager);
         mainPresenter = new MainPresenter(this);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
 
     }
 
@@ -99,6 +111,13 @@ public class Main2Activity extends AppCompatActivity implements MainContract.Vie
 
     }
 
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
     public class MainPagerAdapter extends FragmentStatePagerAdapter {
 
         public MainPagerAdapter(FragmentManager fm) {
@@ -114,10 +133,9 @@ public class Main2Activity extends AppCompatActivity implements MainContract.Vie
                     return new DetailFragment();
                 case 2:
                     return new InvestFragment();
-                case 3:
-                    return new DebtFragment();
                 default:
-                    return new SettingFragment();
+                    return new DebtFragment();
+
             }
         }
 
@@ -130,10 +148,9 @@ public class Main2Activity extends AppCompatActivity implements MainContract.Vie
                     return "收支";
                 case 2:
                     return "投资";
-                case 3:
-                    return "负债";
+
                 default:
-                    return "设置";
+                    return "负债";
 
 
             }
@@ -141,7 +158,7 @@ public class Main2Activity extends AppCompatActivity implements MainContract.Vie
 
         @Override
         public int getCount() {
-            return 5;
+            return 4;
         }
     }
 
@@ -205,4 +222,14 @@ public class Main2Activity extends AppCompatActivity implements MainContract.Vie
         }
     }
 
+
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
 }

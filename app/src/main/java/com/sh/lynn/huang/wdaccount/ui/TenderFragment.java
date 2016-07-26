@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -15,7 +14,8 @@ import android.view.ViewGroup;
 
 import com.sh.lynn.huang.wdaccount.R;
 import com.sh.lynn.huang.wdaccount.adapter.TenderRecordAdapter;
-import com.sh.lynn.huang.wdaccount.dao.TenderRecordDao;
+import com.sh.lynn.huang.wdaccount.been.InvestRecord;
+import com.sh.lynn.huang.wdaccount.dao.InvestRecordDao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,10 +31,10 @@ import butterknife.ButterKnife;
  */
 public class TenderFragment extends Fragment {
 
-    TenderRecordDao tenderRecordDao;
+    InvestRecordDao tenderRecordDao;
     @Bind(R.id.rl_platform)
     RecyclerView mRecyleview;
-    private  List<TenderRecord> tenderRecords = new ArrayList<>();
+    private  List<InvestRecord> tenderRecords = new ArrayList<>();
 private TenderRecordAdapter tenderRecordAdapter;
     private OnListFragmentInteractionListener mListener;
     /**
@@ -89,7 +89,7 @@ private TenderRecordAdapter tenderRecordAdapter;
         return view;
     }
     private void initData(){
-        tenderRecordDao =((WDApp)getActivity(). getApplication()).daoSession.getTenderRecordDao();
+        tenderRecordDao =((WDApp)getActivity(). getApplication()).daoSession.getInvestRecordDao();
         tenderRecords =  tenderRecordDao.loadAll();
     }
 
@@ -111,7 +111,7 @@ private TenderRecordAdapter tenderRecordAdapter;
     }
 
     public interface OnListFragmentInteractionListener {
-        void onListFragmentInteraction(TenderRecord item);
+        void onListFragmentInteraction(InvestRecord item);
     }
 
 }

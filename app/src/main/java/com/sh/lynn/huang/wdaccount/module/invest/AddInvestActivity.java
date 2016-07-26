@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.ViewStub;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -16,8 +15,7 @@ import butterknife.ButterKnife;
 
 public class AddInvestActivity extends AppCompatActivity {
 
-    @Bind(R.id.viewStub)
-    ViewStub viewStub;
+
     @Bind(R.id.rg_investType)
     RadioGroup rg_investType;
     @Bind(R.id.tv_checksource)

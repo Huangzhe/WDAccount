@@ -95,7 +95,7 @@ public class AddBankCardDetailActivity extends AppCompatActivity implements AddB
         recyclerView.setAdapter(bankCardAdapter);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         popupWindow.showAsDropDown(tv_checkBankCard);
-
+        recyclerView.setAdapter(bankCardAdapter);
     }
 
     @Override

@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.sh.lynn.huang.wdaccount.R;
 
+import com.sh.lynn.huang.wdaccount.been.InvestRecord;
 import com.sh.lynn.huang.wdaccount.ui.TenderFragment;
 
 
@@ -19,10 +20,10 @@ import java.util.List;
  */
 public class TenderRecordAdapter extends RecyclerView.Adapter<TenderRecordAdapter.ViewHolder> {
 
-    private final List<TenderRecord> mValues;
+    private final List<InvestRecord> mValues;
     private TenderFragment.OnListFragmentInteractionListener mListener;
 
-    public TenderRecordAdapter(List<TenderRecord> items,TenderFragment.OnListFragmentInteractionListener listener) {
+    public TenderRecordAdapter(List<InvestRecord> items,TenderFragment.OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -60,7 +61,7 @@ public class TenderRecordAdapter extends RecyclerView.Adapter<TenderRecordAdapte
         public final View mView;
         public final TextView mIdView;
         public final TextView mContentView;
-        public TenderRecord mItem;
+        public InvestRecord mItem;
 
         public ViewHolder(View view) {
             super(view);
