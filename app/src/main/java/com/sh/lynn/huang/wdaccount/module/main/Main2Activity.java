@@ -112,7 +112,18 @@ public class Main2Activity extends AppCompatActivity implements MainContract.Vie
     }
 
     @Override
+    public void gotoBankCardList() {
+
+    }
+
+    @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.nav_bankcard:
+
+                break;
+        }
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
@@ -148,7 +159,6 @@ public class Main2Activity extends AppCompatActivity implements MainContract.Vie
                     return "收支";
                 case 2:
                     return "投资";
-
                 default:
                     return "负债";
 

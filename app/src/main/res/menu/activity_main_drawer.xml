@@ -3,9 +3,9 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_filter_list"
-            android:title="Import" />
+            android:id="@+id/nav_bankcard"
+            android:icon="@mipmap/ic_sub_yhk_re"
+            android:title="我的银行卡" />
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_filter_list"

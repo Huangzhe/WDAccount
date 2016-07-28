@@ -10,10 +10,10 @@ public interface MainContract {
 
     public interface View extends BaseView<Presenter>{
 
-
         void gotoAddBankRecord();
         void gotoAddInvestRecord();
         void gotoAddReturnRecord();
+        void gotoBankCardList();
         //void
     }
 
