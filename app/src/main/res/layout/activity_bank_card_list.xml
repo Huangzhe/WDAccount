@@ -7,13 +7,25 @@
     tools:context="com.sh.lynn.huang.wdaccount.module.bankcard.BankCardListActivity">
 
     <include
-        layout="@layout/toolbar"
-        />
-<android.support.v7.widget.RecyclerView
-    android:id="@+id/recyclerView_bankCard"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+        android:id="@+id/layout_title"
+        layout="@layout/toolbar" />
 
-</android.support.v7.widget.RecyclerView>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView_bankCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_title">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/d16"
+        android:layout_marginRight="@dimen/d16"
+        android:src="@drawable/ic_add_white_18dp" />
 
 </RelativeLayout>

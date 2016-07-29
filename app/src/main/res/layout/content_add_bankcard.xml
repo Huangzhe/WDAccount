@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.sh.lynn.huang.wdaccount.module.bankcard.AddBankcardAct"
+    tools:showIn="@layout/activity_add_bankcard"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_time"
+        android:layout_marginTop="@dimen/d20"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/TextView_label2"
+            android:text="开户行" />
+
+        <EditText
+            android:id="@+id/et_bankName"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/d40"
+            android:layout_marginLeft="@dimen/d10"
+            android:drawablePadding="@dimen/d10"
+            android:gravity="center_vertical"
+
+            android:hint="请输入开户行"
+            android:minWidth="@dimen/d100"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/text_hint"
+            android:textSize="@dimen/s16" />
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_time"
+        android:layout_marginTop="@dimen/d20"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/TextView_label2"
+            android:text="卡号" />
+
+        <EditText
+            android:id="@+id/et_bankcard"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/d40"
+            android:layout_marginLeft="@dimen/d10"
+            android:drawablePadding="@dimen/d10"
+            android:gravity="center_vertical"
+
+            android:hint="请输入卡号后4位"
+            android:minWidth="@dimen/d100"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/text_hint"
+            android:textSize="@dimen/s16" />
+    </LinearLayout>
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_time"
+        android:layout_marginTop="@dimen/d20"
+        android:orientation="horizontal">
+    <TextView
+        android:id="@+id/tv_select_type"
+        style="@style/TextView_label2"
+        android:text="卡类型:" />
+
+    <RadioGroup
+        android:id="@+id/rg_investType"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d40"
+        android:layout_toRightOf="@+id/tv_select_type"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_p2p"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="储蓄卡" />
+
+        <RadioButton
+            android:id="@+id/rb_funds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/d10"
+            android:text="信用卡" />
+
+
+    </RadioGroup>
+        </LinearLayout>
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_time"
+        android:layout_marginTop="@dimen/d20"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/TextView_label2"
+            android:text="账单日" />
+
+        <TextView
+            android:id="@+id/tv_date1"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/d40"
+            android:layout_marginLeft="@dimen/d10"
+            android:drawablePadding="@dimen/d10"
+            android:gravity="center_vertical"
+
+            android:hint="请设置账单日期"
+            android:minWidth="@dimen/d100"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/text_hint"
+            android:textSize="@dimen/s16" />
+    </LinearLayout>
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_time"
+        android:layout_marginTop="@dimen/d20"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/TextView_label2"
+            android:text="还款日" />
+
+        <TextView
+            android:id="@+id/tv_date2"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/d40"
+            android:layout_marginLeft="@dimen/d10"
+            android:drawablePadding="@dimen/d10"
+            android:gravity="center_vertical"
+
+            android:hint="请设置最迟还款日期"
+            android:minWidth="@dimen/d100"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/text_hint"
+            android:textSize="@dimen/s16" />
+    </LinearLayout>
+    <Button
+
+        android:id="@+id/btn_save"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/d42"
+        android:layout_below="@+id/ll_other"
+        android:layout_marginLeft="@dimen/d19"
+        android:layout_marginRight="@dimen/d19"
+        android:layout_marginTop="@dimen/d20"
+        android:background="@drawable/btn_next"
+        android:text="保存"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/s16" />
+</LinearLayout>
