@@ -31,24 +31,24 @@ import com.sh.lynn.huang.wdaccount.module.invest.AddInvestActivity;
 import com.sh.lynn.huang.wdaccount.module.invest.InvestFragment;
 import com.sh.lynn.huang.wdaccount.utils.PopupHelper;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class Main2Activity extends AppCompatActivity implements MainContract.View , NavigationView.OnNavigationItemSelectedListener {
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.viewPager)
+    @BindView(R.id.viewPager)
     ViewPager viewpager;
-    @Bind(R.id.tab_layout)
+    @BindView(R.id.tab_layout)
     TabLayout tabLayout;
 
-  //  @Bind(R.id.tv_add_cash)
+  //  @BindView(R.id.tv_add_cash)
     TextView tv_add_cash;
 
-  //  @Bind(R.id.tv_add_invest)
+  //  @BindView(R.id.tv_add_invest)
     TextView tv_add_invest;
 
-  //  @Bind(R.id.tv_add_back)
+  //  @BindView(R.id.tv_add_back)
     TextView tv_add_back;
 
     private MainPagerAdapter mMainPagerAdapter;

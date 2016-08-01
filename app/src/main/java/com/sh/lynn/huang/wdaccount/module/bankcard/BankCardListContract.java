@@ -12,6 +12,7 @@ import java.util.List;
 public interface BankCardListContract {
     public interface View extends BaseView<Presenter> {
 
+
         public void showList(List<BankCard> list);
         public void gotoAddBankCardAct();
 
