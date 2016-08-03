@@ -22,7 +22,7 @@ import com.sh.lynn.huang.wdaccount.utils.PopupHelper;
 import java.util.Date;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -30,15 +30,15 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 public class AddBankCardDetailActivity extends AppCompatActivity implements AddBankCardDetailContract.View {
 
-    @Bind(R.id.tv_checkBankCard)
+    @BindView(R.id.tv_checkBankCard)
     TextView tv_checkBankCard;
 
-    @Bind(R.id.et_money)
+    @BindView(R.id.et_money)
     EditText et_money;
 
-    @Bind(R.id.et_desc)
+    @BindView(R.id.et_desc)
     EditText et_desc;
-    @Bind(R.id.rg_type)
+    @BindView(R.id.rg_type)
     RadioGroup rg_type;
 
     int type=0;//0收入 -1支出

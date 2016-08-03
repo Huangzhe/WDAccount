@@ -10,19 +10,19 @@ import android.widget.TextView;
 
 import com.sh.lynn.huang.wdaccount.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class AddInvestActivity extends AppCompatActivity {
 
 
-    @Bind(R.id.rg_investType)
+    @BindView(R.id.rg_investType)
     RadioGroup rg_investType;
-    @Bind(R.id.tv_checksource)
+    @BindView(R.id.tv_checksource)
     TextView tv_checksource;
-    @Bind(R.id.et_investmoney)
+    @BindView(R.id.et_investmoney)
     EditText et_investmoney;
-    @Bind(R.id.et_investTarget)
+    @BindView(R.id.et_investTarget)
     EditText et_investTarget;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

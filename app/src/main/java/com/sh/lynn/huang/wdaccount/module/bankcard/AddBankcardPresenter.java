@@ -20,9 +20,18 @@ public class AddBankcardPresenter implements AddBankcardContract.Presenter {
         bankCardRespository.saveBankCard(bankCard);
     }
 
+    /**
+     * 1 借记卡，0 信用卡
+     * @param type
+     */
     @Override
     public void setCardType(int type) {
 
+        if(type ==1){
+            addBankcardView.showCreditCardContent(false);
+        }else{
+            addBankcardView.showCreditCardContent(true);
+        }
     }
 
     @Override

@@ -1,8 +1,6 @@
 package com.sh.lynn.huang.wdaccount.ui;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -12,24 +10,21 @@ import android.widget.Toast;
 
 import com.sh.lynn.huang.wdaccount.R;
 import com.sh.lynn.huang.wdaccount.been.Platform;
-import com.sh.lynn.huang.wdaccount.dao.DaoSession;
 import com.sh.lynn.huang.wdaccount.dao.PlatformDao;
 
-import java.util.List;
-
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class CreatPlatformActivity extends AppCompatActivity {
 
-@Bind(R.id.et_name)
+@BindView(R.id.et_name)
     EditText et_name;
-    @Bind(R.id.et_address)
+    @BindView(R.id.et_address)
     EditText et_address;
-    @Bind(R.id.et_describe)
+    @BindView(R.id.et_describe)
     EditText et_describe;
-    @Bind(R.id.et_loginName)
+    @BindView(R.id.et_loginName)
     EditText et_loginName;
 
     PlatformDao platformDao;

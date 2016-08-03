@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -21,13 +20,13 @@ import com.sh.lynn.huang.wdaccount.dao.PlatformDao;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class PlatformFragment extends Fragment {
 
     PlatformDao platformDao;
-    @Bind(R.id.rl_platform)
+    @BindView(R.id.rl_platform)
     RecyclerView rl_platform;
 
     PlatformAdapter platformAdapter;

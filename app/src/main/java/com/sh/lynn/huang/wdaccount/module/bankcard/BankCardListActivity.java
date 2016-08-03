@@ -13,16 +13,17 @@ import com.sh.lynn.huang.wdaccount.been.BankCard;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class BankCardListActivity extends AppCompatActivity implements BankCardListContract.View {
 
-    @Bind(R.id.recyclerView_bankCard)
+    @BindView(R.id.recyclerView_bankCard)
     RecyclerView mRecyclerView;
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.fab)
+    @BindView(R.id.fab)
     FloatingActionButton fab;
+
 
     BankCardListContract.Presenter bankCardPresenter;
 
@@ -52,6 +53,8 @@ public class BankCardListActivity extends AppCompatActivity implements BankCardL
             }
         });
     }
+
+
 
     @Override
     public void showList(List<BankCard> list) {

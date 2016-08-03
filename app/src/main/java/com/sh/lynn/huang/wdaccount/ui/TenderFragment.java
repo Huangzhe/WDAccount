@@ -20,7 +20,7 @@ import com.sh.lynn.huang.wdaccount.dao.InvestRecordDao;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -32,7 +32,7 @@ import butterknife.ButterKnife;
 public class TenderFragment extends Fragment {
 
     InvestRecordDao tenderRecordDao;
-    @Bind(R.id.rl_platform)
+    @BindView(R.id.rl_platform)
     RecyclerView mRecyleview;
     private  List<InvestRecord> tenderRecords = new ArrayList<>();
 private TenderRecordAdapter tenderRecordAdapter;
