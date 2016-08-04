@@ -69,6 +69,13 @@ public class AddBankcardAct extends AppCompatActivity implements AddBankcardCont
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         rg_bankcardType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -140,7 +147,7 @@ public class AddBankcardAct extends AppCompatActivity implements AddBankcardCont
 
     }
 
-    @OnClick
+    @OnClick({ R.id.tv_date1, R.id.tv_date2, R.id.btn_save })
     public void viewOnClick(View view) {
         switch (view.getId()) {
             case R.id.tv_date1:

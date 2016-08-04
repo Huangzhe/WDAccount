@@ -32,6 +32,7 @@ public class WDApp extends Application {
         // 所以，在正式的项目中，你还应该做一层封装，来实现数据库的安全升级。
         DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(this, "notes-db", null);
         SQLiteDatabase db = helper.getWritableDatabase();
+        helper.onUpgrade(db,1,2);
         // 注意：该数据库连接属于 DaoMaster，所以多个 Session 指的是相同的数据库连接。
         DaoMaster daoMaster = new DaoMaster(db);
         daoSession = daoMaster.newSession();
