@@ -10,20 +10,22 @@ public class BankCard {
     private String cardID;
     /** Not-null value. */
     private String cardNum;
-    private String balance;
+    private String money;
     private String bankName;
-    private java.util.Date billTime;
+    private Integer billDate;
+    private Integer repaymentDate;
     private Integer cardType;
 
     public BankCard() {
     }
 
-    public BankCard(String cardID, String cardNum, String balance, String bankName, java.util.Date billTime, Integer cardType) {
+    public BankCard(String cardID, String cardNum, String money, String bankName, Integer billDate, Integer repaymentDate, Integer cardType) {
         this.cardID = cardID;
         this.cardNum = cardNum;
-        this.balance = balance;
+        this.money = money;
         this.bankName = bankName;
-        this.billTime = billTime;
+        this.billDate = billDate;
+        this.repaymentDate = repaymentDate;
         this.cardType = cardType;
     }
 
@@ -47,12 +49,12 @@ public class BankCard {
         this.cardNum = cardNum;
     }
 
-    public String getBalance() {
-        return balance;
+    public String getMoney() {
+        return money;
     }
 
-    public void setBalance(String balance) {
-        this.balance = balance;
+    public void setMoney(String money) {
+        this.money = money;
     }
 
     public String getBankName() {
@@ -63,12 +65,20 @@ public class BankCard {
         this.bankName = bankName;
     }
 
-    public java.util.Date getBillTime() {
-        return billTime;
+    public Integer getBillDate() {
+        return billDate;
     }
 
-    public void setBillTime(java.util.Date billTime) {
-        this.billTime = billTime;
+    public void setBillDate(Integer billDate) {
+        this.billDate = billDate;
+    }
+
+    public Integer getRepaymentDate() {
+        return repaymentDate;
+    }
+
+    public void setRepaymentDate(Integer repaymentDate) {
+        this.repaymentDate = repaymentDate;
     }
 
     public Integer getCardType() {

@@ -35,6 +35,12 @@ public class AddBankcardPresenter implements AddBankcardContract.Presenter {
     }
 
     @Override
+    public void setDate(int date,int id) {
+        addBankcardView.setDateText(date,id);
+        addBankcardView.showDateDialog(false,0);
+    }
+
+    @Override
     public void subscribe() {
 
     }

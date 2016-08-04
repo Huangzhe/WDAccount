@@ -25,10 +25,11 @@ public class BankCardDao extends AbstractDao<BankCard, Void> {
     public static class Properties {
         public final static Property CardID = new Property(0, String.class, "cardID", false, "CARD_ID");
         public final static Property CardNum = new Property(1, String.class, "cardNum", false, "CARD_NUM");
-        public final static Property Balance = new Property(2, String.class, "balance", false, "BALANCE");
+        public final static Property Money = new Property(2, String.class, "money", false, "MONEY");
         public final static Property BankName = new Property(3, String.class, "bankName", false, "BANK_NAME");
-        public final static Property BillTime = new Property(4, java.util.Date.class, "billTime", false, "BILL_TIME");
-        public final static Property CardType = new Property(5, Integer.class, "cardType", false, "CARD_TYPE");
+        public final static Property BillDate = new Property(4, Integer.class, "billDate", false, "BILL_DATE");
+        public final static Property RepaymentDate = new Property(5, Integer.class, "repaymentDate", false, "REPAYMENT_DATE");
+        public final static Property CardType = new Property(6, Integer.class, "cardType", false, "CARD_TYPE");
     };
 
 
@@ -46,10 +47,11 @@ public class BankCardDao extends AbstractDao<BankCard, Void> {
         db.execSQL("CREATE TABLE " + constraint + "\"BANK_CARD\" (" + //
                 "\"CARD_ID\" TEXT NOT NULL ," + // 0: cardID
                 "\"CARD_NUM\" TEXT NOT NULL ," + // 1: cardNum
-                "\"BALANCE\" TEXT," + // 2: balance
+                "\"MONEY\" TEXT," + // 2: money
                 "\"BANK_NAME\" TEXT," + // 3: bankName
-                "\"BILL_TIME\" INTEGER," + // 4: billTime
-                "\"CARD_TYPE\" INTEGER);"); // 5: cardType
+                "\"BILL_DATE\" INTEGER," + // 4: billDate
+                "\"REPAYMENT_DATE\" INTEGER," + // 5: repaymentDate
+                "\"CARD_TYPE\" INTEGER);"); // 6: cardType
     }
 
     /** Drops the underlying database table. */
@@ -65,9 +67,9 @@ public class BankCardDao extends AbstractDao<BankCard, Void> {
         stmt.bindString(1, entity.getCardID());
         stmt.bindString(2, entity.getCardNum());
  
-        String balance = entity.getBalance();
-        if (balance != null) {
-            stmt.bindString(3, balance);
+        String money = entity.getMoney();
+        if (money != null) {
+            stmt.bindString(3, money);
         }
  
         String bankName = entity.getBankName();
@@ -75,14 +77,19 @@ public class BankCardDao extends AbstractDao<BankCard, Void> {
             stmt.bindString(4, bankName);
         }
  
-        java.util.Date billTime = entity.getBillTime();
-        if (billTime != null) {
-            stmt.bindLong(5, billTime.getTime());
+        Integer billDate = entity.getBillDate();
+        if (billDate != null) {
+            stmt.bindLong(5, billDate);
+        }
+ 
+        Integer repaymentDate = entity.getRepaymentDate();
+        if (repaymentDate != null) {
+            stmt.bindLong(6, repaymentDate);
         }
  
         Integer cardType = entity.getCardType();
         if (cardType != null) {
-            stmt.bindLong(6, cardType);
+            stmt.bindLong(7, cardType);
         }
     }
 
@@ -98,10 +105,11 @@ public class BankCardDao extends AbstractDao<BankCard, Void> {
         BankCard entity = new BankCard( //
             cursor.getString(offset + 0), // cardID
             cursor.getString(offset + 1), // cardNum
-            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // balance
+            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // money
             cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // bankName
-            cursor.isNull(offset + 4) ? null : new java.util.Date(cursor.getLong(offset + 4)), // billTime
-            cursor.isNull(offset + 5) ? null : cursor.getInt(offset + 5) // cardType
+            cursor.isNull(offset + 4) ? null : cursor.getInt(offset + 4), // billDate
+            cursor.isNull(offset + 5) ? null : cursor.getInt(offset + 5), // repaymentDate
+            cursor.isNull(offset + 6) ? null : cursor.getInt(offset + 6) // cardType
         );
         return entity;
     }
@@ -111,10 +119,11 @@ public class BankCardDao extends AbstractDao<BankCard, Void> {
     public void readEntity(Cursor cursor, BankCard entity, int offset) {
         entity.setCardID(cursor.getString(offset + 0));
         entity.setCardNum(cursor.getString(offset + 1));
-        entity.setBalance(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
+        entity.setMoney(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
         entity.setBankName(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
-        entity.setBillTime(cursor.isNull(offset + 4) ? null : new java.util.Date(cursor.getLong(offset + 4)));
-        entity.setCardType(cursor.isNull(offset + 5) ? null : cursor.getInt(offset + 5));
+        entity.setBillDate(cursor.isNull(offset + 4) ? null : cursor.getInt(offset + 4));
+        entity.setRepaymentDate(cursor.isNull(offset + 5) ? null : cursor.getInt(offset + 5));
+        entity.setCardType(cursor.isNull(offset + 6) ? null : cursor.getInt(offset + 6));
      }
     
     /** @inheritdoc */

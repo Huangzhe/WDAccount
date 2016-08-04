@@ -67,6 +67,33 @@
             android:textColorHint="@color/text_hint"
             android:textSize="@dimen/s16" />
     </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_time"
+        android:layout_marginTop="@dimen/d20"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/TextView_label2"
+            android:text="初始金额" />
+
+        <EditText
+            android:id="@+id/et_initMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/d40"
+            android:layout_marginLeft="@dimen/d10"
+            android:drawablePadding="@dimen/d10"
+            android:gravity="center_vertical"
+            android:inputType="numberDecimal"
+            android:hint="请输入初始金额"
+            android:minWidth="@dimen/d100"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/text_hint"
+            android:textSize="@dimen/s16" />
+    </LinearLayout>
     <LinearLayout
 
         android:layout_width="match_parent"
