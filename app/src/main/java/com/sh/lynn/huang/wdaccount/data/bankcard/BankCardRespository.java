@@ -17,11 +17,22 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * Created by hyz84 on 16/7/8.
  */
 public class BankCardRespository implements BankCardDataSource {
+    private static BankCardRespository INSTANCE;
+
     BankCardDao dao;
-    public BankCardRespository(){
-         dao = checkNotNull(WDApp.getInstance().daoSession.getBankCardDao(),"数据库启动失败，请重试");
+
+    private BankCardRespository() {
+        dao = checkNotNull(WDApp.getInstance().daoSession.getBankCardDao(), "数据库启动失败，请重试");
 
     }
+
+    public static BankCardRespository getInstance() {
+        if (INSTANCE == null) {
+            INSTANCE = new BankCardRespository();
+        }
+        return INSTANCE;
+    }
+
     @Override
     public Observable<List<BankCard>> getBankCards() {
 
@@ -40,8 +51,8 @@ public class BankCardRespository implements BankCardDataSource {
     }
 
     @Override
-    public void saveBankCard(@NonNull BankCard task) {
-
+    public long saveBankCard(@NonNull BankCard bankCard) {
+        return dao.insert(bankCard);
     }
 
     @Override

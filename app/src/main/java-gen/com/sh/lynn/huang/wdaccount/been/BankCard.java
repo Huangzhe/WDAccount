@@ -7,8 +7,6 @@ package com.sh.lynn.huang.wdaccount.been;
 public class BankCard {
 
     /** Not-null value. */
-    private String cardID;
-    /** Not-null value. */
     private String cardNum;
     private String money;
     private String bankName;
@@ -19,24 +17,13 @@ public class BankCard {
     public BankCard() {
     }
 
-    public BankCard(String cardID, String cardNum, String money, String bankName, Integer billDate, Integer repaymentDate, Integer cardType) {
-        this.cardID = cardID;
+    public BankCard(String cardNum, String money, String bankName, Integer billDate, Integer repaymentDate, Integer cardType) {
         this.cardNum = cardNum;
         this.money = money;
         this.bankName = bankName;
         this.billDate = billDate;
         this.repaymentDate = repaymentDate;
         this.cardType = cardType;
-    }
-
-    /** Not-null value. */
-    public String getCardID() {
-        return cardID;
-    }
-
-    /** Not-null value; ensure this value is available before it is saved to the database. */
-    public void setCardID(String cardID) {
-        this.cardID = cardID;
     }
 
     /** Not-null value. */

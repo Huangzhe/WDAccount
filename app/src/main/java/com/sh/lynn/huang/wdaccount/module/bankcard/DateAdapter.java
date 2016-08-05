@@ -1,6 +1,7 @@
 package com.sh.lynn.huang.wdaccount.module.bankcard;
 
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -28,13 +29,15 @@ public class DateAdapter extends RecyclerView.Adapter<DateAdapter.ViewHolder> {
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
-        return new ViewHolder(View.inflate(parent.getContext(),R.layout.item_textview,null));
+//View view= View.inflate(parent.getContext(),R.layout.item_textview,null);
+        View view=     LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_textview, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.textView.setText(data[position]);
+        holder.textView.setText(data[position]+"");
     }
 
     @Override

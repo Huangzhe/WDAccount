@@ -30,7 +30,7 @@ public class MyDaoGenerator {
 
         Entity bankCard =  schema.addEntity("BankCard");
 
-        bankCard.addStringProperty("cardID").notNull();
+
         bankCard.addStringProperty("cardNum").notNull();;
         bankCard.addStringProperty("money");
         bankCard.addStringProperty("bankName");

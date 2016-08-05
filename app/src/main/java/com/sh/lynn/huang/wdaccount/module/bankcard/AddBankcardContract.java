@@ -13,6 +13,7 @@ public class AddBankcardContract {
         public void showCreditCardContent(boolean isShow);
         public void showDateDialog(boolean b,int id);
         public void setDateText(int date,int type);
+        public void clearText(long saveRet);
 
     }
     public interface Presenter extends BasePresenter {

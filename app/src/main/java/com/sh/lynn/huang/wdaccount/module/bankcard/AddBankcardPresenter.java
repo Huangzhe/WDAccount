@@ -17,7 +17,9 @@ public class AddBankcardPresenter implements AddBankcardContract.Presenter {
 
     @Override
     public void saveBankcard(BankCard bankCard) {
-        bankCardRespository.saveBankCard(bankCard);
+     long ret =   bankCardRespository.saveBankCard(bankCard);
+        addBankcardView.clearText(ret);
+        //addBankcardView
     }
 
     /**

@@ -16,7 +16,7 @@ public interface BankCardDataSource {
 
     Observable<BankCard> getBankCard(@NonNull String id);
 
-    void saveBankCard(@NonNull BankCard task);
+    long saveBankCard(@NonNull BankCard task);
 
     void refreshBankCards();
 
