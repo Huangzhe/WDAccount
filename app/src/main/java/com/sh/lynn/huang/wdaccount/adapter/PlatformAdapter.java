@@ -11,7 +11,7 @@ import com.sh.lynn.huang.wdaccount.been.Platform;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -47,9 +47,9 @@ public class PlatformAdapter extends RecyclerView.Adapter<PlatformAdapter.ViewHo
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        @Bind(R.id.tv_platformName)
+        @BindView(R.id.tv_platformName)
         TextView tv_platformName;
-        @Bind(R.id.tv_platormAdrs)
+        @BindView(R.id.tv_platormAdrs)
         TextView tv_platormAdrs;
         public ViewHolder(View itemView) {
             super(itemView);

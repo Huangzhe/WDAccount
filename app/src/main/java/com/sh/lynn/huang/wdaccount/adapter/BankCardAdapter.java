@@ -11,7 +11,7 @@ import com.sh.lynn.huang.wdaccount.been.BankCard;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -44,7 +44,7 @@ public class BankCardAdapter extends RecyclerView.Adapter<BankCardAdapter.ViewHo
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        @Bind(R.id.tv_bankCard)
+        @BindView(R.id.tv_bankCard)
         TextView tv_bankCard;
         public ViewHolder(View itemView) {
             super(itemView);

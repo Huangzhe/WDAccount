@@ -26,4 +26,28 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_add_bankcard">添加银行卡</string>
+
+    <array name="bankNames">
+        <item>请选择</item>
+        <item>工商银行</item>
+        <item>农业银行</item>
+        <item>中国银行</item>
+        <item>建设银行</item>
+        <item>邮储银行</item>
+        <item>交通银行</item>
+        <item>中信银行</item>
+        <item>光大银行</item>
+        <item>华夏银行</item>
+        <item>民生银行</item>
+        <item>广发银行</item>
+        <item>深发银行</item>
+        <item>招商银行</item>
+        <item>兴业银行</item>
+        <item>浦发银行</item>
+        <item>平安银行</item>
+        <item>北京银行</item>
+        <item>花旗银行</item>
+        <item>渣打银行</item>
+        <item>其他</item>
+    </array>
 </resources>

@@ -1,6 +1,8 @@
 package com.sh.lynn.huang.wdaccount.module.bankcard;
 
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -9,15 +11,18 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.sh.lynn.huang.wdaccount.R;
 import com.sh.lynn.huang.wdaccount.been.BankCard;
 import com.sh.lynn.huang.wdaccount.utils.DividerItemDecoration;
+import com.sh.lynn.huang.wdaccount.utils.MyToast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -30,8 +35,8 @@ public class AddBankcardAct extends AppCompatActivity implements AddBankcardCont
     @BindView(R.id.ll_accountTime)
     LinearLayout ll_accountTime;
 
-    @BindView(R.id.tv_bankName)
-    TextView tv_bankName;
+  @BindView(R.id.spinner_bankName)
+  Spinner spinner;
 
     @BindView(R.id.et_bankcard)
     EditText et_bankcard;
@@ -53,10 +58,11 @@ public class AddBankcardAct extends AppCompatActivity implements AddBankcardCont
     TextView tv_date2;
 
     AlertDialog dateDialog;
-
+@BindView(R.id.parentLayout)
+    CoordinatorLayout parentlayout;
     int date1=0;
     int date2=0;
-
+String bankName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +74,13 @@ public class AddBankcardAct extends AppCompatActivity implements AddBankcardCont
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         rg_bankcardType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -82,7 +95,20 @@ public class AddBankcardAct extends AppCompatActivity implements AddBankcardCont
                 }
             }
         });
+       // spinner.setAdapter(new ArrayAdapter<String>(this,R.layout.item_textview, BankName.getBankName()));
 
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                bankName = getResources().getStringArray(R.array.bankNames)[position];
+                ;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
         mPresenter = new AddBankcardPresenter(this);
     }
 
@@ -140,7 +166,7 @@ public class AddBankcardAct extends AppCompatActivity implements AddBankcardCont
 
     }
 
-    @OnClick
+    @OnClick({ R.id.tv_date1, R.id.tv_date2, R.id.btn_save })
     public void viewOnClick(View view) {
         switch (view.getId()) {
             case R.id.tv_date1:
@@ -149,12 +175,14 @@ public class AddBankcardAct extends AppCompatActivity implements AddBankcardCont
             case R.id.tv_date2:
                 showDateDialog(true,R.id.tv_date2);
                 break;
+
             case R.id.btn_save:
 
                 BankCard bankCard = new BankCard();
-                String bankName = tv_bankName.getText().toString();
-                if (TextUtils.isEmpty(bankName)) {
-                    tv_bankName.setError("发卡行名称不能为空!");
+
+                //String bankName = tv_bankName.getText().toString();
+                if (TextUtils.isEmpty(bankName)||"请选择".equals(bankName)) {
+                    MyToast.showToast(this,"发卡行名称不能为空!");
                     return;
                 }
 
@@ -181,6 +209,27 @@ public class AddBankcardAct extends AppCompatActivity implements AddBankcardCont
         }
     }
 
+@Override
+    public void clearText(long saveRet){
+        String snakBarText = "";
+        if(saveRet!=-1){
+            et_bankcard.setText("");
+            et_initMoney.setText("");
+            spinner.setSelection(0,true);
+            snakBarText="保存成功";
+        }else{
+            snakBarText="保存失败";
+        }
+
+
+
+        Snackbar.make(parentlayout,snakBarText,Snackbar.LENGTH_LONG).setAction("退出", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        }).show();
+    }
 
     @Override
     public void setPresenter(AddBankcardContract.Presenter presenter) {

@@ -23,6 +23,7 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.sh.lynn.huang.wdaccount.R;
+import com.sh.lynn.huang.wdaccount.module.bankcard.BankCardListActivity;
 import com.sh.lynn.huang.wdaccount.module.count.FragmentCount;
 import com.sh.lynn.huang.wdaccount.module.debt.DebtFragment;
 import com.sh.lynn.huang.wdaccount.module.detail.AddBankCardDetailActivity;
@@ -42,10 +43,10 @@ public class Main2Activity extends AppCompatActivity implements MainContract.Vie
     @BindView(R.id.tab_layout)
     TabLayout tabLayout;
 
-  //  @BindView(R.id.tv_add_cash)
+//    @BindView(R.id.tv_add_cash)
     TextView tv_add_cash;
 
-  //  @BindView(R.id.tv_add_invest)
+   // @BindView(R.id.tv_add_invest)
     TextView tv_add_invest;
 
   //  @BindView(R.id.tv_add_back)
@@ -64,7 +65,7 @@ public class Main2Activity extends AppCompatActivity implements MainContract.Vie
        // toolbar.setTitle("钱掌柜  —  您的个人资产管家");
        // getSupportActionBar().setTitle("钱掌柜  —  您的个人资产管家");
         ButterKnife.bind(this);
-       setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         tabLayout.setTabTextColors(getResources().getColor(android.R.color.darker_gray), getResources().getColor(android.R.color.white));
@@ -120,7 +121,8 @@ public class Main2Activity extends AppCompatActivity implements MainContract.Vie
     public boolean onNavigationItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.nav_bankcard:
-
+Intent intent = new Intent(this, BankCardListActivity.class);
+                startActivity(intent);
                 break;
         }
 

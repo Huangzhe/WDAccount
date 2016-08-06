@@ -14,6 +14,7 @@ import com.sh.lynn.huang.wdaccount.been.BankCard;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class BankCardListActivity extends AppCompatActivity implements BankCardListContract.View {
 
@@ -31,6 +32,7 @@ public class BankCardListActivity extends AppCompatActivity implements BankCardL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bank_card_list);
+        ButterKnife.bind(this);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

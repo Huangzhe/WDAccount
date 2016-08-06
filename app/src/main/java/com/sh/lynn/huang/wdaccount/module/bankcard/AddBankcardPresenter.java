@@ -17,7 +17,9 @@ public class AddBankcardPresenter implements AddBankcardContract.Presenter {
 
     @Override
     public void saveBankcard(BankCard bankCard) {
-        bankCardRespository.saveBankCard(bankCard);
+     long ret =   bankCardRespository.saveBankCard(bankCard);
+        addBankcardView.clearText(ret);
+        //addBankcardView
     }
 
     /**
@@ -32,6 +34,12 @@ public class AddBankcardPresenter implements AddBankcardContract.Presenter {
         }else{
             addBankcardView.showCreditCardContent(true);
         }
+    }
+
+    @Override
+    public void setDate(int date,int id) {
+        addBankcardView.setDateText(date,id);
+        addBankcardView.showDateDialog(false,0);
     }
 
     @Override

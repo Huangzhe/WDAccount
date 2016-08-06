@@ -7,34 +7,23 @@ package com.sh.lynn.huang.wdaccount.been;
 public class BankCard {
 
     /** Not-null value. */
-    private String cardID;
-    /** Not-null value. */
     private String cardNum;
-    private String balance;
+    private String money;
     private String bankName;
-    private java.util.Date billTime;
+    private Integer billDate;
+    private Integer repaymentDate;
     private Integer cardType;
 
     public BankCard() {
     }
 
-    public BankCard(String cardID, String cardNum, String balance, String bankName, java.util.Date billTime, Integer cardType) {
-        this.cardID = cardID;
+    public BankCard(String cardNum, String money, String bankName, Integer billDate, Integer repaymentDate, Integer cardType) {
         this.cardNum = cardNum;
-        this.balance = balance;
+        this.money = money;
         this.bankName = bankName;
-        this.billTime = billTime;
+        this.billDate = billDate;
+        this.repaymentDate = repaymentDate;
         this.cardType = cardType;
-    }
-
-    /** Not-null value. */
-    public String getCardID() {
-        return cardID;
-    }
-
-    /** Not-null value; ensure this value is available before it is saved to the database. */
-    public void setCardID(String cardID) {
-        this.cardID = cardID;
     }
 
     /** Not-null value. */
@@ -47,12 +36,12 @@ public class BankCard {
         this.cardNum = cardNum;
     }
 
-    public String getBalance() {
-        return balance;
+    public String getMoney() {
+        return money;
     }
 
-    public void setBalance(String balance) {
-        this.balance = balance;
+    public void setMoney(String money) {
+        this.money = money;
     }
 
     public String getBankName() {
@@ -63,12 +52,20 @@ public class BankCard {
         this.bankName = bankName;
     }
 
-    public java.util.Date getBillTime() {
-        return billTime;
+    public Integer getBillDate() {
+        return billDate;
     }
 
-    public void setBillTime(java.util.Date billTime) {
-        this.billTime = billTime;
+    public void setBillDate(Integer billDate) {
+        this.billDate = billDate;
+    }
+
+    public Integer getRepaymentDate() {
+        return repaymentDate;
+    }
+
+    public void setRepaymentDate(Integer repaymentDate) {
+        this.repaymentDate = repaymentDate;
     }
 
     public Integer getCardType() {
