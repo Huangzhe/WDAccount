@@ -12,7 +12,7 @@ public class AddBankcardPresenter implements AddBankcardContract.Presenter {
     BankCardRespository bankCardRespository;
     public AddBankcardPresenter(AddBankcardContract.View view){
         addBankcardView = view;
-        bankCardRespository = new BankCardRespository();
+        bankCardRespository =  BankCardRespository.getInstance();
     }
 
     @Override

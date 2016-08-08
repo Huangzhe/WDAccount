@@ -21,7 +21,7 @@ public class AddInvestPresenter implements AddInvestContract.Presenter {
     public AddInvestPresenter(AddInvestContract.View view){
         mAddInvesView=view;
         investRecordRepository = new InvestRecordRepository();
-        bankCardRespository = new BankCardRespository();
+        bankCardRespository =  BankCardRespository.getInstance();
     }
 
     @Override
