@@ -16,7 +16,7 @@ public class BankCardPresenter implements  BankCardListContract.Presenter {
     BankCardRespository bankCardRespository;
     BankCardListContract.View mView;
     public BankCardPresenter(BankCardListContract.View view){
-        bankCardRespository = new BankCardRespository();
+        bankCardRespository =  BankCardRespository.getInstance();
         mView = view;
     }
 

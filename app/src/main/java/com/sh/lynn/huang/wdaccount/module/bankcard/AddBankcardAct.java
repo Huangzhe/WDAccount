@@ -196,9 +196,9 @@ String bankName;
                 bankCard.setCardNum(cardNo);
                 bankCard.setMoney(money);
                 if (rb_creditCard.isChecked()) {
-                    bankCard.setCardType(0);
+                    bankCard.setCardType(0);//信用卡
                 } else {
-                    bankCard.setCardType(1);
+                    bankCard.setCardType(1);//储蓄卡
                 }
                 bankCard.setBillDate(date1);
                 bankCard.setRepaymentDate(date2);

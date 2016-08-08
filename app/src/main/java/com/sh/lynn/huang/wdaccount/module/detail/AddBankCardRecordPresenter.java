@@ -26,7 +26,7 @@ public class AddBankCardRecordPresenter implements AddBankCardDetailContract.Pre
 //        bankCardDao = WDApp.getInstance().daoSession.getBankCardDao();
 //        bankCardRecordDao=WDApp.getInstance().daoSession.getBankCardRecordDao();
         bankCardRecordRepository = new BankCardRecordRepository();
-        bankCardRespository = new BankCardRespository();
+        bankCardRespository =  BankCardRespository.getInstance();
     }
 
     @Override

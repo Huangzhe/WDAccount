@@ -4,11 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.sh.lynn.huang.wdaccount.R;
+import com.sh.lynn.huang.wdaccount.adapter.BankcardListAdapter;
 import com.sh.lynn.huang.wdaccount.been.BankCard;
 
 import java.util.List;
@@ -58,8 +61,16 @@ public class BankCardListActivity extends AppCompatActivity implements BankCardL
 
 
 
+
     @Override
     public void showList(List<BankCard> list) {
+        mRecyclerView.setAdapter(new BankcardListAdapter(list));
+
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(layoutManager);
+
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
     }
 
