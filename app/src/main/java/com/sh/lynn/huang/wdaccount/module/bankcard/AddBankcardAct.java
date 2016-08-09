@@ -137,7 +137,7 @@ String bankName;
             recyclerView.setLayoutManager(layoutManager);
 
             recyclerView.setItemAnimator(new DefaultItemAnimator());
-            recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL_LIST));
+            recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL_LIST|DividerItemDecoration.VERTICAL_LIST));
 
 
             builder.setView(view);
