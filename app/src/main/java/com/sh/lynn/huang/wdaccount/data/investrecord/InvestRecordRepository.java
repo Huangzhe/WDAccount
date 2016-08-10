@@ -11,14 +11,29 @@ import java.util.List;
 import rx.Observable;
 import rx.Subscriber;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 /**
  * Created by hyz84 on 16/7/25.
  */
 public class InvestRecordRepository implements InvestRecordDataSource {
 
-    InvestRecordDao dao ;
-    public InvestRecordRepository(){
-        dao = WDApp.getInstance().daoSession.getInvestRecordDao();
+
+    private static InvestRecordRepository INSTANCE;
+
+    InvestRecordDao dao;
+
+    private InvestRecordRepository() {
+        dao = checkNotNull(WDApp.getInstance().daoSession.getInvestRecordDao(), "数据库启动失败，请重试");
+
+    }
+
+
+    public static InvestRecordRepository getInstance() {
+        if (INSTANCE == null) {
+            INSTANCE = new InvestRecordRepository();
+        }
+        return INSTANCE;
     }
 
 
