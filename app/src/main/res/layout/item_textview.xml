@@ -6,6 +6,7 @@
     android:layout_height="@dimen/d50"
     android:textColor="@android:color/black"
     android:id="@+id/tv_num"
+    android:layout_marginRight="@dimen/d1"
     android:text="5"
     android:textSize="@dimen/s20"
     android:gravity="center"
