@@ -38,6 +38,7 @@ public class AddInvestContract {
         void gotoAddP2PPlatform();
 
         double calIncome();
+        void showExtendView(int type);
 
     }
 }

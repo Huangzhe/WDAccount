@@ -75,16 +75,16 @@
                     style="@style/TextView_label2"
                     android:text="资金账户" />
 
-                <TextView
-                    android:id="@+id/tv_checksource"
+                <Spinner
+                    android:id="@+id/spinner_bankCard"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/d40"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/d10"
-                    android:drawablePadding="@dimen/d10"
-                    android:drawableRight="@android:drawable/arrow_down_float"
+
                     android:gravity="center_vertical"
-                    android:hint="请选择资金账户"
+                    android:entries="@array/bankNames"
                     android:minWidth="@dimen/d100"
+                    android:textColor="@android:color/black"
                     android:textColorHint="@color/text_hint"
                     android:textSize="@dimen/s16" />
             </LinearLayout>
