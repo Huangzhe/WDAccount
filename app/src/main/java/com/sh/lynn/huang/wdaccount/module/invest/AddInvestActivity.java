@@ -4,11 +4,15 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 import com.sh.lynn.huang.wdaccount.R;
+import com.sh.lynn.huang.wdaccount.adapter.BankCardNumAdapter;
 import com.sh.lynn.huang.wdaccount.been.BankCard;
 import com.sh.lynn.huang.wdaccount.been.Platform;
 
@@ -22,7 +26,7 @@ public class AddInvestActivity extends AppCompatActivity implements AddInvestCon
 
     @BindView(R.id.rg_investType)
     RadioGroup rg_investType;
-//    @BindView(R.id.tv_checksource)
+    //    @BindView(R.id.tv_checksource)
 //    TextView tv_checksource;
     @BindView(R.id.et_investmoney)
     EditText et_investmoney;
@@ -56,19 +60,32 @@ public class AddInvestActivity extends AppCompatActivity implements AddInvestCon
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-                    mPresenter.showExtendView(checkedId);
+                mPresenter.showExtendView(checkedId);
 
             }
         });
+
+        spinner_bankCard.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
     }
 
-    @Override
-    public void setBankCard(String bankCard) {
 
-    }
 
     @Override
     public void showBankCardList(List<BankCard> bankCardRecords) {
+
+        spinner_bankCard.setAdapter(new BankCardNumAdapter( bankCardRecords,this));
+
 
     }
 
@@ -79,20 +96,20 @@ public class AddInvestActivity extends AppCompatActivity implements AddInvestCon
 
     @Override
     public void showExtendView(int type) {
-switch (type){
-    case R.id.rb_p2p:
-        layout_p2p.setVisibility(View.VISIBLE);
-    layout_funds.setVisibility(View.GONE);
-        break;
-    case R.id.rb_funds:
-        layout_p2p.setVisibility(View.GONE);
-        layout_funds.setVisibility(View.VISIBLE);
-        break;
-    case R.id.rb_other:
-        layout_p2p.setVisibility(View.GONE);
-        layout_funds.setVisibility(View.GONE);
-        break;
-}
+        switch (type) {
+            case R.id.rb_p2p:
+                layout_p2p.setVisibility(View.VISIBLE);
+                layout_funds.setVisibility(View.GONE);
+                break;
+            case R.id.rb_funds:
+                layout_p2p.setVisibility(View.GONE);
+                layout_funds.setVisibility(View.VISIBLE);
+                break;
+            case R.id.rb_other:
+                layout_p2p.setVisibility(View.GONE);
+                layout_funds.setVisibility(View.GONE);
+                break;
+        }
 
     }
 
@@ -119,5 +136,29 @@ switch (type){
     @Override
     public void setPresenter(AddInvestContract.Presenter presenter) {
 
+    }
+
+    private   class MyAdapter extends BaseAdapter{
+
+
+        @Override
+        public int getCount() {
+            return 0;
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            return null;
+        }
     }
 }
