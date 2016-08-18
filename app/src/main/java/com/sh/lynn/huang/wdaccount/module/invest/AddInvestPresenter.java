@@ -20,7 +20,7 @@ public class AddInvestPresenter implements AddInvestContract.Presenter {
     private BankCardRespository bankCardRespository;
     public AddInvestPresenter(AddInvestContract.View view){
         mAddInvesView=view;
-        investRecordRepository = new InvestRecordRepository();
+        investRecordRepository =  InvestRecordRepository.getInstance();
         bankCardRespository =  BankCardRespository.getInstance();
     }
 
@@ -73,6 +73,11 @@ public class AddInvestPresenter implements AddInvestContract.Presenter {
     @Override
     public double calIncome() {
         return 0;
+    }
+
+    @Override
+    public void showExtendView(int type) {
+        mAddInvesView.showExtendView(type);
     }
 
     @Override

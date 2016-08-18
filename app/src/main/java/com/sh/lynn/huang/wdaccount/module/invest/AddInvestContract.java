@@ -15,7 +15,7 @@ public class AddInvestContract {
 
     public interface View extends BaseView<Presenter> {
 
-        void setBankCard(String bankCard);
+
         void showBankCardList(List<BankCard> bankCardRecords);
         void showDateDialog();
         void showExtendView(int type);
@@ -38,6 +38,7 @@ public class AddInvestContract {
         void gotoAddP2PPlatform();
 
         double calIncome();
+        void showExtendView(int type);
 
     }
 }
