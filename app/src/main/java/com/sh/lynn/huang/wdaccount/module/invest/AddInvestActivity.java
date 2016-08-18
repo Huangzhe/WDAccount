@@ -1,5 +1,6 @@
 package com.sh.lynn.huang.wdaccount.module.invest;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -7,15 +8,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.sh.lynn.huang.wdaccount.R;
 import com.sh.lynn.huang.wdaccount.adapter.BankCardNumAdapter;
 import com.sh.lynn.huang.wdaccount.been.BankCard;
 import com.sh.lynn.huang.wdaccount.been.Platform;
 
+import java.util.Calendar;
 import java.util.List;
 
 import butterknife.BindView;
@@ -32,6 +36,9 @@ public class AddInvestActivity extends AppCompatActivity implements AddInvestCon
     EditText et_investmoney;
     @BindView(R.id.et_investTarget)
     EditText et_investTarget;
+    @BindView(R.id.tv_investTime)
+    TextView tv_investTime;
+
     @BindView(R.id.spinner_bankCard)
     Spinner spinner_bankCard;
     @BindView(R.id.layout_p2p)
@@ -39,6 +46,8 @@ public class AddInvestActivity extends AppCompatActivity implements AddInvestCon
     @BindView(R.id.layout_funds)
     View layout_funds;
     AddInvestPresenter mPresenter;
+
+    private int year, monthOfYear, dayOfMonth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +86,16 @@ public class AddInvestActivity extends AppCompatActivity implements AddInvestCon
             }
         });
 
+
+        tv_investTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mPresenter.showDateDialog();
+            }
+        });
     }
+
+
 
 
 
@@ -91,6 +109,21 @@ public class AddInvestActivity extends AppCompatActivity implements AddInvestCon
 
     @Override
     public void showDateDialog() {
+
+        Calendar calendar = Calendar.getInstance();
+        year = calendar.get(Calendar.YEAR);
+        monthOfYear = calendar.get(Calendar.MONTH);
+
+        dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog dialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+            mPresenter.setDate(year,monthOfYear,dayOfMonth);
+            }
+        },year,monthOfYear,dayOfMonth);
+
+        dialog.show();
 
     }
 
@@ -134,31 +167,28 @@ public class AddInvestActivity extends AppCompatActivity implements AddInvestCon
     }
 
     @Override
+    public void setDate(int year, int month, int day) {
+      String mth="";
+        String d="";
+
+        if((month+1)<10){
+            mth = "0"+(month+1);
+        }else{
+            mth = (month+1)+"";
+        }
+        if(day<10){
+            d = "0"+day;
+        }else{
+            d = day+"";
+        }
+        tv_investTime.setText(year+"-"+mth+"-"+d);
+    }
+
+    @Override
     public void setPresenter(AddInvestContract.Presenter presenter) {
 
+
     }
 
-    private   class MyAdapter extends BaseAdapter{
 
-
-        @Override
-        public int getCount() {
-            return 0;
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return null;
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return 0;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            return null;
-        }
-    }
 }

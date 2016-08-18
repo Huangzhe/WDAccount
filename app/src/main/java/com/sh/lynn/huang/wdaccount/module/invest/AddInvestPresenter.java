@@ -76,8 +76,18 @@ public class AddInvestPresenter implements AddInvestContract.Presenter {
     }
 
     @Override
+    public void setDate(int year, int month, int day) {
+        mAddInvesView.setDate(year,month,day);
+    }
+
+    @Override
     public void showExtendView(int type) {
         mAddInvesView.showExtendView(type);
+    }
+
+    @Override
+    public void showDateDialog() {
+        mAddInvesView.showDateDialog();
     }
 
     @Override

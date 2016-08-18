@@ -23,6 +23,7 @@ public class AddInvestContract {
         void setPlatform(Platform platform);
         void gotoP2PPfAct();
         void setIncome(double income);
+        void setDate(int year,int month,int day);
     }
 
     public interface Presenter extends BasePresenter {
@@ -38,7 +39,11 @@ public class AddInvestContract {
         void gotoAddP2PPlatform();
 
         double calIncome();
+        void setDate(int year,int month,int day);
+
         void showExtendView(int type);
+
+        void showDateDialog();
 
     }
 }
