@@ -39,7 +39,8 @@
         <activity
             android:name=".module.bankcard.AddBankcardAct"
             android:label="@string/title_activity_add_bankcard"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".base.BaseActivity"></activity>
     </application>
 
 </manifest>

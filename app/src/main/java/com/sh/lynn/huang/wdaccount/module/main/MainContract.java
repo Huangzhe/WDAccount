@@ -1,7 +1,7 @@
 package com.sh.lynn.huang.wdaccount.module.main;
 
-import com.sh.lynn.huang.wdaccount.BasePresenter;
-import com.sh.lynn.huang.wdaccount.BaseView;
+import com.sh.lynn.huang.wdaccount.base.BasePresenter;
+import com.sh.lynn.huang.wdaccount.base.BaseView;
 
 /**
  * Created by Huangz on 16/6/6.

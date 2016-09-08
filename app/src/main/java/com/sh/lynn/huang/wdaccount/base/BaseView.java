@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.sh.lynn.huang.wdaccount;
+package com.sh.lynn.huang.wdaccount.base;
 
 public interface BaseView<T> {
 

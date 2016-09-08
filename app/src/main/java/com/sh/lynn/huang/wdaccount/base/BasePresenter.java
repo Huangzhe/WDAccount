@@ -1,5 +1,5 @@
 
-package com.sh.lynn.huang.wdaccount;
+package com.sh.lynn.huang.wdaccount.base;
 
 public interface BasePresenter {
 

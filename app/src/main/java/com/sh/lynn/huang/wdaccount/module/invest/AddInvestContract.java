@@ -1,7 +1,7 @@
 package com.sh.lynn.huang.wdaccount.module.invest;
 
-import com.sh.lynn.huang.wdaccount.BasePresenter;
-import com.sh.lynn.huang.wdaccount.BaseView;
+import com.sh.lynn.huang.wdaccount.base.BasePresenter;
+import com.sh.lynn.huang.wdaccount.base.BaseView;
 import com.sh.lynn.huang.wdaccount.been.BankCard;
 import com.sh.lynn.huang.wdaccount.been.InvestRecord;
 import com.sh.lynn.huang.wdaccount.been.Platform;
